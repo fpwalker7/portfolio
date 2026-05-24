@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─────────────────────────────────────────────── */
+:root {
+  --background: 220 13% 9%;
+  --foreground: 210 20% 92%;
+
+  --card: 220 13% 11%;
+  --card-foreground: 210 20% 92%;
+
+  --primary: 185 72% 48%;
+  --primary-foreground: 220 13% 9%;
+
+  --secondary: 220 13% 14%;
+  --secondary-foreground: 210 20% 92%;
+
+  --muted: 220 13% 14%;
+  --muted-foreground: 210 10% 55%;
+
+  --accent: 185 72% 48%;
+  --accent-foreground: 220 13% 9%;
+
+  --border: 220 13% 18%;
+  --ring: 185 72% 48%;
+}
+
+/* ─── Base Styles ────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* ─── Grid Background ────────────────────────────────────────────── */
+.bg-grid {
+  background-image:
+    linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ─── Shimmer Text ───────────────────────────────────────────────── */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--accent)) 0%,
+    hsl(185 90% 70%) 40%,
+    hsl(var(--primary)) 60%,
+    hsl(var(--accent)) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+  transition: filter 0.4s ease, animation-duration 0.4s ease;
+}
+
+.shimmer-text:hover {
+  animation-play-state: paused;
+  filter: brightness(1.4) drop-shadow(0 0 12px hsl(185 72% 60% / 0.7));
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ─── Shimmer Icon ───────────────────────────────────────────────── */
+.shimmer-icon {
+  color: hsl(var(--accent));
+  animation: icon-pulse 3s ease-in-out infinite;
+}
+
+@keyframes icon-pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* ─── Shimmer Border Hover ───────────────────────────────────────── */
+.shimmer-border-hover {
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.shimmer-border-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--accent) / 0) 0%,
+    hsl(var(--accent) / 0.4) 50%,
+    hsl(var(--accent) / 0) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.shimmer-border-hover:hover::before {
+  opacity: 1;
+}
+
+/* ─── Shimmer Frame ──────────────────────────────────────────────── */
+.shimmer-frame {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--accent) / 0.3),
+    hsl(var(--primary) / 0.1),
+    hsl(var(--accent) / 0.3)
+  );
+  background-size: 200% 200%;
+  animation: shimmer-frame 4s ease infinite;
+  border-radius: 1rem;
+}
+
+@keyframes shimmer-frame {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ─── Glow Line ──────────────────────────────────────────────────── */
+.glow-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--accent) / 0.5),
+    hsl(var(--primary) / 0.8),
+    hsl(var(--accent) / 0.5),
+    transparent
+  );
+  filter: blur(0.5px);
+}
+
+/* ─── Sparkle Stars ──────────────────────────────────────────────── */
+.sparkle-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle-star {
+  position: absolute;
+  border-radius: 50%;
+  background: hsl(var(--accent));
+  animation: sparkle var(--duration, 2s) var(--delay, 0s) ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: var(--peak-opacity, 0.7); transform: scale(1); }
+}
+
+/* ─── Counter Numbers ────────────────────────────────────────────── */
+.counter-number {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--foreground)) 0%,
+    hsl(var(--accent)) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.5);
+}
+
+/* ─── Print / PDF Styles ─────────────────────────────────────── */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  /* Hide non-content elements */
+  .print\:hidden,
+  nav {
+    display: none !important;
+  }
+
+  /* Reset dark backgrounds */
+  [class*="bg-[hsl(var(--background))]"],
+  [class*="bg-[hsl(var(--card)"],
+  [class*="bg-[hsl(var(--secondary)"] {
+    background: #ffffff !important;
+  }
+
+  /* Reset text colors */
+  [class*="text-[hsl(var(--foreground))]"] {
+    color: #111111 !important;
+  }
+
+  [class*="text-[hsl(var(--muted-foreground))]"] {
+    color: #444444 !important;
+  }
+
+  /* Reset borders */
+  [class*="border-[hsl(var(--border)"] {
+    border-color: #dddddd !important;
+  }
+
+  /* Shimmer text — solid teal in print */
+  .shimmer-text {
+    background: none !important;
+    -webkit-text-fill-color: #22C4D3 !important;
+    color: #22C4D3 !important;
+    animation: none !important;
+  }
+
+  /* Shimmer icon — solid teal in print */
+  .shimmer-icon {
+    color: #22C4D3 !important;
+    animation: none !important;
+  }
+
+  /* Glow line */
+  .glow-line {
+    background: #dddddd !important;
+    filter: none !important;
+  }
+
+  /* Reduce margins for print */
+  main {
+    padding-top: 8px !important;
+    padding-bottom: 0 !important;
+  }
+
+  section {
+    margin-top: 16px !important;
+  }
+
+  /* Only avoid breaks on individual bullets and small cards */
+  li {
+    break-inside: avoid;
+  }
+
+  /* Keep education and accomplishment cards together */
+  .shimmer-border-hover {
+    break-inside: avoid;
+  }
+
+  /* Remove blur effects */
+  [class*="blur"] {
+    filter: none !important;
+  }
+
+  /* Remove box shadows */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
