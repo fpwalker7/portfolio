@@ -18,7 +18,7 @@ export default function Nav() {
             width={28}
             height={28}
             aria-hidden
-            style={{ filter: 'brightness(0) saturate(100%) invert(72%) sepia(75%) saturate(520%) hue-rotate(152deg) brightness(93%) contrast(91%)' }}
+            style={{ filter: 'url(#logo-teal-filter)' }}
           />
           {SITE.name}
         </Link>

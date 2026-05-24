@@ -219,7 +219,7 @@ export default function ResumePage() {
                 width={36}
                 height={36}
                 aria-hidden
-                style={{ filter: 'brightness(0) saturate(100%) invert(72%) sepia(75%) saturate(520%) hue-rotate(152deg) brightness(93%) contrast(91%)' }}
+                style={{ filter: 'url(#logo-teal-filter)' }}
               />
               <h1 className="text-3xl font-bold tracking-tight text-[hsl(var(--foreground))] md:text-4xl">
                 Fernanda <span className="shimmer-text">Passos</span>{' '}
