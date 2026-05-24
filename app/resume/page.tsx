@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, Mail, Linkedin, MapPin, Award, Building2, GraduationCap, Code2, Heart, Languages } from 'lucide-react'
+import { ArrowLeft, Mail, Linkedin, MapPin, Award, Building2, GraduationCap, Code2, Heart, Languages, User } from 'lucide-react'
 import { SITE } from '@/lib/data'
 import PrintButton from '@/components/PrintButton'
 
@@ -262,7 +262,7 @@ export default function ResumePage() {
         {/* ── Summary ──────────────────────────────────────────── */}
         <section className="mt-10">
           <h2 className="mb-5 flex items-center gap-2 text-lg font-bold text-[hsl(var(--foreground))]">
-            <Code2 className="h-5 w-5 shimmer-icon" aria-hidden="true" />
+            <User className="h-5 w-5 shimmer-icon" aria-hidden="true" />
             Summary
           </h2>
           <div className="rounded-xl border border-[hsl(var(--border)/0.5)] bg-[hsl(var(--card)/0.6)] p-6 shimmer-border-hover">
