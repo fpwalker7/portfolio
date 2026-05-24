@@ -23,8 +23,8 @@ export default function Nav() {
           {SITE.name}
         </Link>
 
-        {/* CTAs */}
-        <div className="flex items-center gap-3">
+        {/* CTAs — hidden on mobile, visible on desktop */}
+        <div className="hidden items-center gap-3 md:flex">
           <a
             href={SITE.linkedin}
             target="_blank"
