@@ -261,7 +261,8 @@ export default function ResumePage() {
 
         {/* ── Summary ──────────────────────────────────────────── */}
         <section className="mt-10">
-          <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[hsl(var(--accent))]">
+          <h2 className="mb-5 flex items-center gap-2 text-lg font-bold text-[hsl(var(--foreground))]">
+            <Code2 className="h-5 w-5 shimmer-icon" aria-hidden="true" />
             Summary
           </h2>
           <div className="rounded-xl border border-[hsl(var(--border)/0.5)] bg-[hsl(var(--card)/0.6)] p-6 shimmer-border-hover">
@@ -285,7 +286,7 @@ export default function ResumePage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {ACCOMPLISHMENTS.map((item, i) => (
               <div key={i} className="rounded-xl border border-[hsl(var(--border)/0.5)] bg-[hsl(var(--card)/0.6)] p-5 shimmer-border-hover">
-                <p className="text-sm font-bold text-[hsl(var(--foreground))]">{item.title}</p>
+                <p className="shimmer-text text-sm font-bold">{item.title}</p>
                 <p className="mt-2 text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">{item.description}</p>
               </div>
             ))}
