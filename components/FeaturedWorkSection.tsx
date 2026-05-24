@@ -40,7 +40,7 @@ export default function FeaturedWorkSection() {
               </div>
 
               {/* Content */}
-              <div className="flex flex-1 flex-col gap-2 p-6 pt-0 md:p-8 md:pt-8">
+              <div className="flex flex-1 flex-col gap-2 p-6 pt-4 md:p-8 md:pt-8">
                 <span className="inline-flex w-fit rounded-full border border-[hsl(var(--accent)/0.3)] bg-[hsl(var(--accent)/0.05)] px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-[hsl(var(--accent))]">
                   {item.tag}
                 </span>
