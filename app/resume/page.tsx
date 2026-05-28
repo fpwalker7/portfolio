@@ -11,7 +11,7 @@ const SKILL_CATEGORIES = [
   },
   {
     category: 'CMS & Web Platform Architecture',
-    skills: ['Enterprise WordPress', 'Sitecore', 'CMS Governance', 'Custom Templates', 'Reusable Components', 'Multilingual Workflows'],
+    skills: ['Enterprise WordPress', 'Sitecore', 'Webflow', 'CMS Governance', 'Custom Templates', 'Reusable Components', 'Multilingual Workflows'],
   },
   {
     category: 'Analytics & Growth Optimization',
