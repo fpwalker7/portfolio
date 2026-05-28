@@ -83,10 +83,10 @@ const EXPERIENCE = [
         description: 'Global education company helping universities grow international enrollment through digital admissions, recruitment, and student success programs.',
         bullets: [
           'Developed microsites, landing pages, and web applications supporting international marketing campaigns, student acquisition initiatives, and program launches.',
+          'Worked across Webflow, HubSpot, WordPress, Marketo, and Salesforce as Shorelight\'s marketing web stack evolved, supporting campaign pages, forms, CRM integrations, and lead flow.',
           'Built scalable front end solutions using HTML5, CSS3, and JavaScript, translating business requirements into maintainable web implementations under tight timelines.',
           'Implemented campaign experiences through Marketo and Salesforce integrations, connecting web experiences to Shorelight\'s broader marketing ecosystem.',
           'Partnered with marketing, SEO, and product stakeholders to optimize WordPress based microsites, improving search visibility, usability, and overall user experience.',
-          'Integrated third party platforms and marketing systems to expand website capabilities and accelerate campaign launches.',
         ],
       },
     ],
