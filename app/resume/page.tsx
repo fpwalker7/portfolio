@@ -461,11 +461,10 @@ export default function ResumePage() {
               </div>
               <ul className="mt-2 flex flex-col gap-1.5">
                 {[
-                  "Designed and developed the school's website to improve communication and community engagement.",
-                  'Built and optimized fundraising and event landing pages to support school initiatives and increase participation.',
-                  'Designed and refined web forms and user flows to improve user experience and streamline registrations and donations.',
-                  'Implemented accessibility best practices to support inclusive, standards-compliant digital experiences.',
-                  'Maintain site content, information architecture, and brand consistency to ensure a clear and reliable digital presence.',
+                  'Designed and maintained the school website to improve communication with students, families, staff, and the broader BPS community.',
+                  'Built fundraising, event, registration, and donation pages that improved access to information and supported school initiatives.',
+                  'Refined web forms, user flows, and information architecture to streamline registrations, donations, and family-facing updates.',
+                  'Implemented accessibility and usability improvements to support inclusive, standards-compliant digital experiences.',
                 ].map((bullet, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-[hsl(var(--muted-foreground))]">
                     <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[hsl(var(--accent)/0.6)]" aria-hidden="true" />
