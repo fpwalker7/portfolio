@@ -66,7 +66,7 @@ const EXPERIENCE = [
           'Developed and optimized WordPress landing pages and campaign experiences for global acquisition initiatives using custom templates and front-end enhancements.',
           'Managed multilingual content structures and localization workflows across international markets, supporting scalable global web governance.',
           'Improved front-end performance, SEO, and attribution through asset optimization, template enhancements, and integrations with marketing automation and analytics platforms.',
-          'Led hands-on accessibility remediation across website pages and components, resolving critical WCAG issues and establishing a QA workflow to improve accessibility before launch.',
+          <span><a href="/resume/accessibility" className="underline underline-offset-2 hover:text-[hsl(var(--accent))] transition-colors">Led hands-on accessibility remediation</a> across website pages and components, resolving critical WCAG issues and establishing a QA workflow to improve accessibility before launch.</span>,
         ],
       },
     ],
@@ -149,6 +149,7 @@ const ACCOMPLISHMENTS = [
   {
     title: 'Accessibility Score Raised to 96+',
     description: 'Led hands-on accessibility remediation across CyberArk\'s enterprise website, resolving critical WCAG issues and raising the site-wide accessibility score to 96+ through audits, ARIA improvements, and a pre-launch QA workflow.',
+    href: '/resume/accessibility',
   },
   {
     title: '30% Increase in Traffic, Leads & Sales Meetings',
@@ -157,6 +158,7 @@ const ACCOMPLISHMENTS = [
   {
     title: 'Scaled Global Localization Across 9 Languages',
     description: 'Owned and scaled multilingual content workflows at CyberArk supporting 9 languages across North America, Europe, and APAC, enabling consistent global web governance.',
+    href: '/resume/localization',
   },
   {
     title: 'Reusable CMS Component Library',
@@ -285,9 +287,18 @@ export default function ResumePage() {
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {ACCOMPLISHMENTS.map((item, i) => (
-              <div key={i} className="rounded-xl border border-[hsl(var(--border)/0.5)] bg-[hsl(var(--card)/0.6)] p-5 shimmer-border-hover">
-                <p className="shimmer-text text-sm font-bold">{item.title}</p>
-                <p className="mt-2 text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">{item.description}</p>
+              <div key={i} className={`rounded-xl border border-[hsl(var(--border)/0.5)] bg-[hsl(var(--card)/0.6)] p-5 shimmer-border-hover${item.href ? ' cursor-pointer' : ''}`}>
+                {item.href ? (
+                  <Link href={item.href}>
+                    <p className="shimmer-text text-sm font-bold">{item.title}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">{item.description}</p>
+                  </Link>
+                ) : (
+                  <>
+                    <p className="shimmer-text text-sm font-bold">{item.title}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">{item.description}</p>
+                  </>
+                )}
               </div>
             ))}
           </div>
@@ -445,7 +456,7 @@ export default function ResumePage() {
                 <p className="text-xs text-[hsl(var(--muted-foreground))]">Boston, MA</p>
               </div>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 mt-0.5">
-                <p className="text-sm text-[hsl(var(--muted-foreground))]">Volunteer Web Developer &amp; Designer</p>
+                <p className="text-sm text-[hsl(var(--muted-foreground))]">Volunteer Website Manager</p>
                 <p className="text-xs text-[hsl(var(--muted-foreground))]">January 2015 – January 2025</p>
               </div>
               <ul className="mt-2 flex flex-col gap-1.5">
