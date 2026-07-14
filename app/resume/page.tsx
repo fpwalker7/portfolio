@@ -32,9 +32,9 @@ const SKILL_CATEGORIES = [
 ]
 
 export const metadata = {
-  title: 'Resume | Fernanda Passos Walker',
+  title: 'Fernanda Passos Walker — Web Leader',
   description:
-    'Resume of Fernanda Passos Walker — Senior Web Developer with 15+ years building high-performing websites, scalable CMS systems, and marketing technology integrations for enterprise teams.',
+    'Senior web developer with 15+ years of experience building, owning, and optimizing high performing websites for enterprise teams.',
 }
 
 const EXPERIENCE = [
@@ -49,14 +49,15 @@ const EXPERIENCE = [
         period: 'January 2023 – March 2026',
         description: 'CyberArk (NASDAQ: CYBR) is a global cybersecurity leader specializing in identity security and privileged access management. Acquired by Palo Alto Networks for $25B in February 2026.',
         bullets: [
-          'Owned and optimized enterprise WordPress web experiences supporting global marketing, demand generation, product marketing, and brand teams.',
-          'Built responsive WordPress pages, templates, and reusable components for scalable, campaign-ready front-end experiences.',
-          'Built and optimized web experiences for technical cybersecurity audiences, balancing performance, accessibility, security, and brand consistency.',
-          'Partnered with UX, creative, growth, and marketing teams to improve user journeys, landing page performance, and conversion paths.',
-          'Improved page speed, technical SEO, accessibility, and front-end quality through asset optimization, template efficiency, and cross-browser QA.',
-          'Supported analytics tracking, event measurement, and A/B testing to help teams understand engagement, conversion, and campaign performance.',
+          'Promoted to drive strategy and execution of the global web experience in partnership with growth and demand generation teams, optimizing journeys and conversion paths for multiple buyer audiences across the funnel.',
+          'Set CMS architecture and governance standards, building a scalable WordPress component library that reduced page build time, kept experiences consistent across regions, and enabled non-technical teams to self-serve content updates.',
+          'Defined and enforced accessibility standards across global web properties, leading hands-on remediation that raised the site-wide accessibility score to 96+ and embedding WCAG best practices into platform governance.',
+          'Owned multilingual platform architecture and localization strategy across 9 languages spanning North America, Europe, and APAC.',
+          'Built and optimized forms and key conversion paths across the site in partnership with demand operations, strengthening campaign tracking and attribution across Salesforce and marketing automation platforms.',
+          'Directed site performance and engagement improvements, setting standards for asset optimization, template efficiency, and front-end quality.',
+          'Led web execution and redirect strategy for acquisition integrations, including content consolidation, SEO preservation, CMS standardization, and localization.',
+          'Aligned landing page strategy with campaign intent alongside SEO, paid media, and content teams, improving engagement and conversion across inbound and paid traffic.',
           'Contributed to future-state planning for a headless CMS architecture using React, Next.js, and TypeScript as part of the proposed modern web platform direction.',
-          'Supported developer-focused web experiences and technical content initiatives, supporting scalable front-end experiences for engineering and technical audiences.',
         ],
       },
       {
@@ -229,7 +230,7 @@ export default function ResumePage() {
               </h1>
             </div>
             <p className="mt-1 text-base text-[hsl(var(--muted-foreground))] md:text-lg">
-              Senior Web Developer &amp; Digital Experience Lead
+              Web Strategy, Digital Experience &amp; Development Leader
             </p>
 
             <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
@@ -272,9 +273,9 @@ export default function ResumePage() {
               Senior web developer with 15+ years of experience building, owning, and optimizing high
               performing websites for enterprise teams. My background spans front end development, CMS
               architecture, accessibility, performance, technical SEO, analytics tracking, and marketing
-              technology integrations. I partner with UX, creative, growth, marketing, and digital teams
-              to build scalable web experiences that support campaigns, product launches, and global
-              digital operations.
+              technology integrations. I partner with UX, creative, growth, demand generation, marketing
+              operations, and digital teams to deliver scalable web experiences that support campaigns,
+              product launches, lead generation, and global digital operations.
             </p>
           </div>
         </section>
