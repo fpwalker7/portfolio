@@ -270,12 +270,13 @@ export default function ResumePage() {
           </h2>
           <div className="rounded-xl border border-[hsl(var(--border)/0.5)] bg-[hsl(var(--card)/0.6)] p-6 shimmer-border-hover">
             <p className="text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">
-              Senior web developer with 15+ years of experience building, owning, and optimizing high
-              performing websites for enterprise teams. My background spans front end development, CMS
-              architecture, accessibility, performance, technical SEO, analytics tracking, and marketing
-              technology integrations. I partner with UX, creative, growth, demand generation, marketing
-              operations, and digital teams to deliver scalable web experiences that support campaigns,
-              product launches, lead generation, and global digital operations.
+              Web strategy and digital experience leader with 15+ years owning and optimizing enterprise
+              web ecosystems, including six years driving the global web experience at CyberArk in B2B
+              cybersecurity. Set the standards, architecture, and roadmap for governance, accessibility,
+              localization, and performance, and partner with demand generation, SEO, product, and brand
+              teams to improve buyer journeys for prospects, customers, partners, and developers. Translate
+              business goals into clear web strategy and requirements that deliver measurable gains in
+              engagement, conversion, and search visibility.
             </p>
           </div>
         </section>
