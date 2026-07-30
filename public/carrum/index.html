@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Medical Insights Hub: Technical Approach · Fernanda Passos</title>
+<style>
+  :root{
+    --paper:#F6F8F9;
+    --ink:#0E1B2C;
+    --muted:#4B5B6B;
+    --teal:#0F766E;
+    --teal-dark:#0B5C56;
+    --pass:#15803D;
+    --amber:#92580B;
+    --amber-bg:#FBF3E4;
+    --line:#D9DFE4;
+    --panel:#0E1B2C;
+    --panel-text:#8FF0C8;
+    --card:#FFFFFF;
+    --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:var(--sans);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal)}
+  a:hover{color:var(--teal-dark)}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:2px}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:10;
+    background:rgba(246,248,249,.92);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:1060px;margin:0 auto;padding:10px 24px;
+    display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;
+  }
+  .topbar .who{font-weight:700;font-size:14px;letter-spacing:.01em;white-space:nowrap}
+  .topbar nav{display:flex;gap:14px;flex-wrap:wrap}
+  .topbar nav a{
+    font-family:var(--mono);font-size:11.5px;text-decoration:none;
+    color:var(--muted);letter-spacing:.02em;
+  }
+  .topbar nav a:hover{color:var(--teal)}
+  @media(max-width:720px){.topbar nav{display:none}}
+
+  /* ---------- layout ---------- */
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  .doc{max-width:72ch}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:72px 0 40px}
+  .kicker{
+    font-family:var(--mono);font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--teal);margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(30px,5vw,46px);line-height:1.12;font-weight:800;
+    letter-spacing:-0.022em;max-width:20ch;margin-bottom:18px;
+  }
+  .hero p.lede{font-size:19px;color:var(--muted);max-width:58ch;margin-bottom:10px}
+  .hero .byline{font-size:14.5px;color:var(--muted)}
+  .hero .byline strong{color:var(--ink)}
+
+  /* ---------- live perf readout (signature) ---------- */
+  .readout{
+    margin:40px 0 0;background:var(--panel);border-radius:8px;
+    padding:18px 20px 14px;color:var(--panel-text);
+    font-family:var(--mono);
+  }
+  .readout .rlabel{
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:#5E7A8F;margin-bottom:12px;
+  }
+  .readout .grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:14px 22px;
+  }
+  .metric .v{font-size:22px;font-weight:600;line-height:1.1}
+  .metric .k{font-size:11px;color:#8FA6B8;margin-top:3px}
+  .readout .foot{
+    margin-top:14px;padding-top:10px;border-top:1px solid #24374A;
+    font-size:11.5px;color:#8FA6B8;line-height:1.5;
+  }
+  .readout .foot em{color:var(--panel-text);font-style:normal}
+
+  /* ---------- sections ---------- */
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  .sec-label{
+    font-family:var(--mono);font-size:12px;color:var(--teal);
+    letter-spacing:.06em;margin-bottom:10px;
+  }
+  h2{font-size:26px;font-weight:800;letter-spacing:-0.015em;margin-bottom:16px}
+  h3{font-size:17.5px;font-weight:700;margin:26px 0 8px}
+  p{margin-bottom:14px}
+  p:last-child{margin-bottom:0}
+  ul.plain{margin:0 0 14px 1.2em}
+  ul.plain li{margin-bottom:8px}
+
+  /* field notes: real-world grounding */
+  .fieldnote{
+    font-size:14.5px;color:var(--ink);
+    background:#EBF3F1;border-left:3px solid var(--pass);
+    padding:10px 14px;border-radius:0 6px 6px 0;margin:18px 0;
+  }
+  .fieldnote .fn-tag{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--pass);display:block;margin-bottom:4px;
+  }
+
+  /* margin perf-notes */
+  .perfnote{
+    font-family:var(--mono);font-size:11.5px;color:var(--muted);
+    background:#EDF1F3;border-left:3px solid var(--teal);
+    padding:8px 12px;border-radius:0 6px 6px 0;margin:18px 0;
+  }
+
+  /* decision + tradeoff cards */
+  .decision{
+    background:var(--card);border:1px solid var(--line);border-radius:8px;
+    padding:16px 18px;margin:18px 0;
+  }
+  .decision .d-tag{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--pass);margin-bottom:6px;
+  }
+  .tradeoff{
+    background:var(--amber-bg);border:1px solid #EAD9BC;border-radius:8px;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;
+  }
+  .tradeoff .d-tag{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--amber);margin-bottom:6px;
+  }
+
+  /* code + tables */
+  pre{
+    background:var(--panel);color:#D7E4EE;border-radius:8px;
+    padding:16px 18px;font-family:var(--mono);font-size:13px;
+    line-height:1.6;overflow-x:auto;margin:16px 0;
+  }
+  pre .c{color:#5E7A8F}
+  pre .g{color:var(--panel-text)}
+  code{
+    font-family:var(--mono);font-size:.88em;background:#E8EDF0;
+    padding:2px 5px;border-radius:4px;
+  }
+  table{
+    width:100%;border-collapse:collapse;margin:16px 0;font-size:15px;
+    background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  }
+  th{
+    text-align:left;font-family:var(--mono);font-size:11.5px;
+    letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
+    padding:10px 14px;border-bottom:1px solid var(--line);background:#EFF3F5;
+  }
+  td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+
+  /* ---------- gate demo ---------- */
+  .gate-demo{
+    background:var(--card);border:1.5px solid var(--ink);border-radius:10px;
+    padding:22px;margin:22px 0;
+  }
+  .gate-demo .d-tag{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--teal);margin-bottom:10px;
+  }
+  .gate-demo h4{font-size:17px;font-weight:700;margin-bottom:6px}
+  .gate-demo .abstract{font-size:15px;color:var(--muted);margin-bottom:14px}
+  .gate-slot{
+    min-height:172px; /* reserved before the form exists: this is the zero-CLS trick */
+    border:1px dashed var(--line);border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    padding:16px;
+  }
+  .gate-btn{
+    font-family:var(--sans);font-size:15px;font-weight:600;
+    background:var(--teal);color:#fff;border:none;border-radius:6px;
+    padding:11px 18px;cursor:pointer;
+  }
+  .gate-btn:hover{background:var(--teal-dark)}
+  .gate-form{width:100%;max-width:420px}
+  .gate-form label{display:block;font-size:13px;font-weight:600;margin:10px 0 4px}
+  .gate-form input{
+    width:100%;font-size:15px;padding:9px 11px;border:1px solid var(--line);
+    border-radius:6px;font-family:var(--sans);background:#fff;color:var(--ink);
+  }
+  .gate-form .note{font-size:12px;color:var(--muted);margin-top:10px}
+  .gate-done{font-size:15px;color:var(--pass);font-weight:600}
+  .gate-meta{
+    font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:12px;
+  }
+  .gate-meta strong{color:var(--pass)}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--line);padding:40px 0 64px;
+    font-size:14px;color:var(--muted);
+  }
+  footer .doc p{margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="who">Fernanda Passos · Web Growth Engineer case study</span>
+    <nav aria-label="Sections">
+      <a href="#assumptions">§1 assumptions</a>
+      <a href="#architecture">§2 architecture</a>
+      <a href="#performance">§3 performance</a>
+      <a href="#editing">§4 editing</a>
+      <a href="#gating">§5 lead gating</a>
+      <a href="#measure">§6 measurement</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="kicker">Case study · Prepared for Carrum Health</p>
+  <h1>A Medical Insights Hub that stays fast at 5,000 resources</h1>
+  <p class="lede">My end-to-end technical approach to an enterprise-grade WordPress resource hub: content architecture, sub-second performance, marketer-safe editing, and lead gating that doesn't cost you Core Web Vitals. Grounded in years of running this exact stack (WordPress, Marketo, Salesforce) on cyberark.com.</p>
+  <p class="byline"><strong>Fernanda Passos</strong> · fpassos.com · Voiceover: <a href="#">link to 7-min walkthrough</a></p>
+
+  <div class="readout" aria-label="Live performance readout of this page">
+    <div class="rlabel">Live readout: this page, your device, right now</div>
+    <div class="grid">
+      <div class="metric"><div class="v" id="m-ttfb">–</div><div class="k">TTFB</div></div>
+      <div class="metric"><div class="v" id="m-fcp">–</div><div class="k">First Contentful Paint</div></div>
+      <div class="metric"><div class="v" id="m-size">–</div><div class="k">Transfer size</div></div>
+      <div class="metric"><div class="v" id="m-req">–</div><div class="k">Requests</div></div>
+      <div class="metric"><div class="v" id="m-cls">–</div><div class="k">Layout shift (CLS)</div></div>
+    </div>
+    <div class="foot">Measured live via the Performance API. Open DevTools and verify. This page is a single HTML file: <em>no framework, no font requests, no third-party scripts</em>. It practices the architecture it argues for.</div>
+  </div>
+</header>
+<section id="assumptions">
+  <div class="doc">
+    <p class="sec-label">§1</p>
+    <h2>Assumptions</h2>
+    <p>Stated up front, as requested:</p>
+    <ul class="plain">
+      <li><strong>Scale:</strong> ~500 resources at launch, growing to 3,000–5,000 over two years. Three content formats: clinical case studies, research papers, webinars.</li>
+      <li><strong>Traffic shape:</strong> overwhelmingly anonymous, read-heavy B2B traffic (benefits leaders, health-system stakeholders). Logged-in users are a handful of editors. This asymmetry drives the whole caching strategy.</li>
+      <li><strong>Stack:</strong> WordPress on a managed host with server-level page caching and Redis available, a CDN in front, <strong>Marketo</strong> for marketing automation and <strong>Salesforce</strong> as the CRM of record. This is the stack I've run in production at CyberArk. The architecture doesn't depend on any one vendor, but everything below is written against the tools I know at enterprise scale.</li>
+      <li><strong>Team:</strong> one content manager who is not technical and should never need a developer to publish, plus a design system that must be impossible to break casually.</li>
+      <li><strong>Compliance posture:</strong> healthcare-adjacent marketing content, not PHI. But I treat tracking and form data with HIPAA-adjacent caution anyway; it's the right instinct in this space.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="doc">
+    <p class="sec-label">§2</p>
+    <h2>Content architecture: one post type, three taxonomies</h2>
+    <p>The tempting move is three custom post types: <code>case_study</code>, <code>paper</code>, <code>webinar</code>. I'd argue against it. Format is a <em>facet</em> of a resource, not a different kind of thing: everything in this library shares a lifecycle, a card layout, a filtering UI, and a gating strategy.</p>
+
+    <div class="decision">
+      <div class="d-tag">Decision</div>
+      <p>A single <code>resource</code> CPT with three registered taxonomies:</p>
+      <ul class="plain">
+        <li><code>resource_type</code>: case study / research paper / webinar</li>
+        <li><code>therapeutic_area</code>: oncology, cardiology, musculoskeletal…</li>
+        <li><code>department</code>: the hospital-department segmentation</li>
+      </ul>
+      <p>Plus a small set of ACF fields per resource (gated asset file, webinar embed, citation metadata) shown conditionally by <code>resource_type</code>.</p>
+    </div>
+
+    <p>Why this matters for the brief's three goals:</p>
+    <ul class="plain">
+      <li><strong>Performance:</strong> taxonomy queries hit indexed relationship tables. Every filtered view maps to a canonical taxonomy archive URL, which makes it cacheable (§3).</li>
+      <li><strong>Editor simplicity:</strong> one "Add resource" flow, not three. The content manager picks a type; the right fields appear.</li>
+      <li><strong>Lead capture:</strong> gating rules key off <code>resource_type</code> and a per-resource override, in one place.</li>
+    </ul>
+
+    <div class="tradeoff">
+      <div class="d-tag">Trade-off I'm accepting</div>
+      One CPT means less per-format flexibility; a webinar's edit screen carries the shape of the shared model. I mitigate with conditional field groups and format-specific block patterns. If a format later diverges hard (say, webinars become a course platform), I'd split it out then. Don't pre-pay for divergence that hasn't happened.
+    </div>
+
+    <div class="fieldnote"><span class="fn-tag">Field note: CyberArk</span>CyberArk's resource center serves this same content mix (whitepapers, ebooks, webinars, videos) across a large product and solution matrix. The lesson I carry from working on that ecosystem: the taxonomy model is a marketing asset, not just a database decision. Get the segmentation right early and every campaign, nav menu, and filtered landing page inherits it for free; get it wrong and you're bulk-recategorizing thousands of assets later.</div>
+
+    <div class="fieldnote"><span class="fn-tag">Field note: buy vs. build</span>Worth naming the alternative: dedicated content-hub platforms (Uberflip and similar) exist for exactly this use case, and I've run one at enterprise scale. CyberArk's resource center is hosted on that model. Those platforms buy you a fast launch, easy marketer workflows, and native Marketo integration. The costs: hub content lives on a separate path or subdomain that fragments SEO authority, Core Web Vitals are only as good as the platform allows, design is bound to their templates, and the subscription runs forever. For a hub whose growth engine is thousands of SEO-bearing URLs, I'd build native WordPress: every URL keeps its authority on the main domain, and performance stays fully in our control. That's the trade this whole document is defending.</div>
+
+    <p class="perfnote">// URL design: /resources/oncology/case-studies/ are real archive pages, crawlable, cacheable, shareable. Filters are pages, not JavaScript state.</p>
+  </div>
+</section>
+
+<section id="performance">
+  <div class="doc">
+    <p class="sec-label">§3</p>
+    <h2>Sub-second at 5,000 posts</h2>
+    <p>WordPress doesn't get slow because of post count. It gets slow because of unindexed <code>meta_query</code> filtering, uncached repeat work, and third-party scripts. So the performance plan is three rules and three layers.</p>
+
+    <h3>Rule 1: never filter user-facing pages by post meta</h3>
+    <p>Anything a visitor can filter by lives in a taxonomy (indexed, fast at any scale). Post meta is for display data only: file URLs, citations, embed IDs. A <code>meta_query</code> against <code>wp_postmeta</code> on a 5,000-post library is where "sub-second" goes to die.</p>
+
+    <h3>Rule 2: filters are URLs, not AJAX state</h3>
+    <p>Faceted filtering renders as pre-defined taxonomy archive and intersection URLs. Each is a static-cacheable, SEO-indexable page. An SPA-style filter UI would force every visitor through uncached dynamic queries and hide 5,000 resources from search engines. That is the opposite of a growth asset.</p>
+
+    <h3>Rule 3: the origin is the last resort</h3>
+    <table>
+      <tr><th>Layer</th><th>What it serves</th><th>Target</th></tr>
+      <tr><td><strong>Edge cache (Cloudflare)</strong></td><td>Full HTML for all anonymous traffic; ~99% of requests never reach PHP. Purged per-URL on publish via hook.</td><td>TTFB &lt; 100 ms</td></tr>
+      <tr><td><strong>Object cache (Redis)</strong></td><td>Query results, term lists, resource-card fragments for the requests that do reach origin.</td><td>Origin render &lt; 300 ms</td></tr>
+      <tr><td><strong>MySQL, tuned</strong></td><td>Indexed taxonomy joins only; <code>no_found_rows</code> on card grids; cursor-style pagination past deep pages.</td><td>Queries &lt; 50 ms</td></tr>
+    </table>
+
+    <p class="perfnote">// Cache invalidation is the real design problem: on publish/update, purge only the resource URL + its term archives + the hub index. Never "purge all"; that's a self-inflicted stampede.</p>
+
+    <h3>Front-end budget</h3>
+    <p>Performance is also a payload discipline: system font stack (zero font requests), responsive AVIF/WebP images with explicit dimensions, no jQuery dependency in the theme, and a hard budget of <strong>≤ 150 KB critical-path weight, LCP &lt; 1.5 s on 4G, CLS &lt; 0.05</strong>, enforced in CI with Lighthouse, not aspirationally in a wiki.</p>
+  </div>
+</section>
+<section id="editing">
+  <div class="doc">
+    <p class="sec-label">§4</p>
+    <h2>Editing: Gutenberg for freedom, tokens for the fence</h2>
+    <p>"Gutenberg vs. ACF Blocks" is a false binary. The real question is <em>where the design system is enforced</em>. My answer: enforce it below the editor, in <code>theme.json</code> and a curated block library, so the content manager gets genuine freedom inside a fence they can't see and can't break.</p>
+
+    <div class="decision">
+      <div class="d-tag">Decision</div>
+      <ul class="plain">
+        <li><strong><code>theme.json</code> owns every token.</strong> Brand palette, type scale, spacing scale defined once; custom colors, custom font sizes, and raw CSS input <em>disabled</em>. Off-brand isn't a training issue; it's structurally impossible.</li>
+        <li><strong>Native Gutenberg for narrative content</strong>, with an allow-list of ~15 blocks. No one needs seven ways to make a column.</li>
+        <li><strong>ACF Blocks for structured, repeated components</strong>: resource cards, gated-download CTA, stat callouts, webinar embeds. Marketers fill fields; the markup is mine, so it's consistent, accessible, and fast everywhere it appears.</li>
+        <li><strong>Block patterns + a locked page template</strong> for each resource type, so "publish a new case study" is fill-in-the-blanks, not layout design.</li>
+      </ul>
+    </div>
+
+    <div class="fieldnote"><span class="fn-tag">Field note: why I trust this hybrid</span>I've shipped on all three generations of WordPress editing. At CyberArk I worked in a WPBakery Page Builder + ACF stack at enterprise scale: fast to assemble, but shortcode lock-in, heavier markup, and brand consistency that depended on editor discipline instead of structure. I've also worked hands-on with native Gutenberg, and seen the opposite failure mode: free-form blocks with no fence. This hybrid is defined by the failure modes I've watched each pure approach produce: Gutenberg for freedom, <code>theme.json</code> for the fence, ACF Blocks where structure matters. And it's the direction WordPress core itself is investing in, so I'm building on the platform's roadmap, not against it.</div>
+
+    <p class="perfnote">// Same logic applies to CSS: I've maintained Bootstrap-based WP themes at CyberArk. No framework here: unused CSS on every load, and utility classes live in markup where no theme.json fence governs them. Tokens give me Bootstrap's consistency without its payload. I know the road I'm declining.</p>
+
+    <div class="tradeoff">
+      <div class="d-tag">Trade-off I'm accepting</div>
+      ACF Blocks add a plugin dependency and a render layer that native blocks avoid, and heavy locking frustrates power users. I'll take both costs: for structured components, field-based editing is safer than free-form block manipulation, and an ACF Pro dependency is a mature, acceptable risk for the control it buys. The fence can be widened later; un-breaking a brand is harder.
+    </div>
+
+    <p class="perfnote">// Success metric for this section: the content manager ships a new gated case study end-to-end with zero developer tickets, and it's pixel-identical to the design system.</p>
+  </div>
+</section>
+
+<section id="gating">
+  <div class="doc">
+    <p class="sec-label">§5</p>
+    <h2>Lead gating without the performance tax</h2>
+    <p>Gating strategy is a funnel decision; gating <em>implementation</em> is a performance decision. Both matter here.</p>
+
+    <h3>Soft gates by default, hard gates by exception</h3>
+    <table>
+      <tr><th>Content</th><th>Gate</th><th>Why</th></tr>
+      <tr><td>Case studies &amp; papers</td><td><strong>Soft</strong>: full abstract and key findings visible; form unlocks the PDF</td><td>The visible content does the SEO work and earns the exchange. Hard-gating everything zeroes out organic growth on 5,000 URLs.</td></tr>
+      <tr><td>Live webinars, benchmark reports</td><td><strong>Hard</strong>: registration required</td><td>High perceived value supports the ask; time-bound events justify friction.</td></tr>
+      <tr><td>Returning known leads</td><td><strong>No gate</strong>: recognized via the Marketo (Munchkin) cookie; progressive profiling on next conversion</td><td>Never make the same person pay twice. Marketo's progressive profiling is built for exactly this: each subsequent form asks two <em>new</em> questions instead of repeating five old ones.</td></tr>
+    </table>
+    <p>Gate level is a per-resource field with sensible defaults by type: a marketing lever, not a code change. And it's an A/B testing surface: my hypothesis is soft gates win on net enterprise leads; I'd rather measure than argue.</p>
+
+    <h3>The implementation: no script bloat, no layout shift</h3>
+    <p>I've spent years with Marketo's embed stack (<code>forms2.min.js</code> plus the Munchkin tracker) and out of the box it's a classic Core Web Vitals killer: render-blocking script weight and a form that pops into an unsized container, shoving the page down. Two rules fix it:</p>
+    <ul class="plain">
+      <li><strong>Load nothing until intent.</strong> <code>forms2.min.js</code> loads only when the gate scrolls near the viewport (IntersectionObserver) or on click, then <code>MktoForms2.loadForm()</code> renders into the slot, never in the critical path. Munchkin loads deferred, after LCP; it's analytics, not content. The stricter variant: skip the embed entirely, ship a native styled form, and submit to Marketo server-side, with full markup control, zero third-party render cost.</li>
+      <li><strong>Reserve the space.</strong> The gate container has an explicit <code>min-height</code> before the form exists, and Marketo's default form CSS is stripped (<code>above the fold</code> styles conflict anyway) in favor of the design system's own tokens. When the form arrives, nothing on the page moves. CLS contribution: zero.</li>
+    </ul>
+    <p>Downstream, submissions flow through the standard Marketo → Salesforce sync: program-status changes drive lead lifecycle, and campaign attribution lands where the sales team already lives. The web layer's job is to hand marketing ops clean, deduplicated, consented records, not to invent its own pipeline.</p>
+
+    <div class="gate-demo" id="gate">
+      <div class="d-tag">Working demo: a soft gate, implemented as described</div>
+      <h4>Oncology bundle outcomes: 24-month case study</h4>
+      <p class="abstract">Abstract visible to everyone (and to crawlers): a 30% reduction in episode cost and a 2.1× improvement in appropriate-care rates across the bundled cohort. The full PDF sits behind the form.</p>
+      <div class="gate-slot" id="gate-slot">
+        <button class="gate-btn" id="gate-btn">Download the full case study (PDF)</button>
+      </div>
+      <p class="gate-meta">Simulates <code>forms2.min.js</code> loading on click, not on page load · container height reserved in CSS · layout shift caused by this widget: <strong id="gate-cls">0.000</strong> (watch the CLS number in the hero; it won't move)</p>
+    </div>
+
+    <p class="perfnote">// Consent &amp; caution: forms collect business contact data only, behind a consent-gated tag plan (GTM server-side where possible). In healthcare, restraint with third-party pixels is a feature.</p>
+  </div>
+</section>
+
+<section id="measure">
+  <div class="doc">
+    <p class="sec-label">§6</p>
+    <h2>How I'd know it's working</h2>
+    <ul class="plain">
+      <li><strong>Performance:</strong> CrUX field data (not just lab): p75 LCP &lt; 1.5 s, CLS &lt; 0.05, TTFB &lt; 200 ms, tracked per template. Lighthouse budget in CI blocks regressions before deploy.</li>
+      <li><strong>Growth:</strong> organic entrances to resource URLs, gate view → submission rate by gate type and therapeutic area, net-new enterprise domains captured, and lead → opportunity rate in Salesforce via Marketo campaign sync. That's the metric the growth team actually answers for.</li>
+      <li><strong>Operations:</strong> resources published per month without developer involvement, and time-to-publish. If the content manager needs me, §4 has failed.</li>
+    </ul>
+    <p>First experiment on day one of having traffic: soft vs. hard gate on the top ten case studies, judged on qualified leads, not raw submissions.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="doc">
+    <p><strong>Colophon &amp; AI disclosure.</strong> This page is itself the demo: one HTML file, no framework, no web fonts, no third-party requests, served from my own domain, the same discipline I'm proposing for the Hub. I used Claude (Anthropic) to pressure-test the architecture, challenge trade-offs, and help structure and draft this page; the technical positions and final calls are my own.</p>
+    <p>Fernanda Passos · fpassos.com · <a href="#">voiceover walkthrough (7 min)</a> · not indexed, prepared for the Carrum Health growth team.</p>
+  </div>
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+(function(){
+  "use strict";
+  var fmt=function(ms){return ms<1000?Math.round(ms)+" ms":(ms/1000).toFixed(2)+" s"};
+  var set=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v};
+
+  // CLS observer: feeds both the hero readout and the gate demo
+  var cls=0;
+  try{
+    new PerformanceObserver(function(list){
+      list.getEntries().forEach(function(e){if(!e.hadRecentInput)cls+=e.value});
+      set("m-cls",cls.toFixed(3));
+      set("gate-cls",cls.toFixed(3));
+    }).observe({type:"layout-shift",buffered:true});
+    set("m-cls","0.000");
+  }catch(e){set("m-cls","n/a")}
+
+  // FCP
+  try{
+    new PerformanceObserver(function(list){
+      list.getEntries().forEach(function(e){
+        if(e.name==="first-contentful-paint")set("m-fcp",fmt(e.startTime));
+      });
+    }).observe({type:"paint",buffered:true});
+  }catch(e){set("m-fcp","n/a")}
+
+  // Navigation timing: TTFB, transfer size, request count
+  var nav=function(){
+    try{
+      var n=performance.getEntriesByType("navigation")[0];
+      if(n){
+        set("m-ttfb",fmt(n.responseStart));
+        var res=performance.getEntriesByType("resource");
+        var bytes=(n.transferSize||0);
+        res.forEach(function(r){bytes+=r.transferSize||0});
+        set("m-size",bytes>0?(bytes/1024).toFixed(1)+" KB":"cached");
+        set("m-req",String(1+res.length));
+      }
+    }catch(e){}
+  };
+  if(document.readyState==="complete")nav();
+  else window.addEventListener("load",function(){setTimeout(nav,80)});
+
+  // Gate demo: "load" the form on click into a height-reserved slot
+  var btn=document.getElementById("gate-btn");
+  if(btn)btn.addEventListener("click",function(){
+    btn.disabled=true;btn.textContent="Loading form script…";
+    setTimeout(function(){ // simulates async script arrival
+      var slot=document.getElementById("gate-slot");
+      slot.innerHTML=
+        '<div class="gate-form">'+
+        '<label for="gf-n">Name</label><input id="gf-n" type="text" autocomplete="name">'+
+        '<label for="gf-e">Work email</label><input id="gf-e" type="email" autocomplete="email">'+
+        '<button class="gate-btn" id="gf-go" style="margin-top:14px">Get the PDF</button>'+
+        '<p class="note">Demo only; nothing is submitted or stored.</p>'+
+        '</div>';
+      document.getElementById("gf-go").addEventListener("click",function(){
+        slot.innerHTML='<p class="gate-done">✓ Unlocked. In production: instant download + progressive-profiling cookie set.</p>';
+      });
+    },450);
+  });
+})();
+</script>
+</body>
+</html>
