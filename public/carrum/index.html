@@ -7,16 +7,17 @@
 <title>Medical Insights Hub: Technical Approach · Fernanda Passos</title>
 <style>
   :root{
-    --paper:#F6F8F9;
-    --ink:#0E1B2C;
-    --muted:#4B5B6B;
-    --teal:#0F766E;
-    --teal-dark:#0B5C56;
-    --pass:#15803D;
+    --paper:#FBF9F6;
+    --ink:#332D28;
+    --muted:#6B615A;
+    --teal:#E1532E;
+    --teal-dark:#B53E1F;
+    --head:#A73B22;
+    --pass:#177245;
     --amber:#92580B;
-    --amber-bg:#FBF3E4;
-    --line:#D9DFE4;
-    --panel:#0E1B2C;
+    --amber-bg:#FBF1E2;
+    --line:#E6DDD3;
+    --panel:#2B211C;
     --panel-text:#8FF0C8;
     --card:#FFFFFF;
     --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;
@@ -40,7 +41,7 @@
   /* ---------- top bar ---------- */
   .topbar{
     position:sticky;top:0;z-index:10;
-    background:rgba(246,248,249,.92);backdrop-filter:blur(6px);
+    background:rgba(251,249,246,.92);backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
   .topbar-inner{
@@ -68,7 +69,7 @@
   }
   h1{
     font-size:clamp(30px,5vw,46px);line-height:1.12;font-weight:800;
-    letter-spacing:-0.022em;max-width:20ch;margin-bottom:18px;
+    letter-spacing:-0.022em;max-width:20ch;margin-bottom:18px;color:var(--head);
   }
   .hero p.lede{font-size:19px;color:var(--muted);max-width:58ch;margin-bottom:10px}
   .hero .byline{font-size:14.5px;color:var(--muted)}
@@ -82,27 +83,36 @@
   }
   .readout .rlabel{
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-    color:#5E7A8F;margin-bottom:12px;
+    color:#9C8B7A;margin-bottom:12px;
   }
   .readout .grid{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
     gap:14px 22px;
   }
   .metric .v{font-size:22px;font-weight:600;line-height:1.1}
-  .metric .k{font-size:11px;color:#8FA6B8;margin-top:3px}
+  .metric .k{font-size:11px;color:#B3A294;margin-top:3px}
   .readout .foot{
-    margin-top:14px;padding-top:10px;border-top:1px solid #24374A;
-    font-size:11.5px;color:#8FA6B8;line-height:1.5;
+    margin-top:14px;padding-top:10px;border-top:1px solid #4A3B31;
+    font-size:11.5px;color:#B3A294;line-height:1.5;
   }
   .readout .foot em{color:var(--panel-text);font-style:normal}
 
   /* ---------- sections ---------- */
   section{padding:44px 0;border-top:1px solid var(--line)}
   .sec-label{
-    font-family:var(--mono);font-size:12px;color:var(--teal);
-    letter-spacing:.06em;margin-bottom:10px;
+    display:flex;align-items:center;gap:12px;margin-bottom:14px;
   }
-  h2{font-size:26px;font-weight:800;letter-spacing:-0.015em;margin-bottom:16px}
+  .sec-num{
+    width:44px;height:44px;flex:none;border-radius:10px;
+    background:var(--teal);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:22px;font-weight:700;
+  }
+  .sec-name{
+    font-family:var(--mono);font-size:13px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--teal-dark);font-weight:700;
+  }
+  h2{font-size:28px;font-weight:800;letter-spacing:-0.015em;margin-bottom:16px;color:var(--head)}
   h3{font-size:17.5px;font-weight:700;margin:26px 0 8px}
   p{margin-bottom:14px}
   p:last-child{margin-bottom:0}
@@ -112,18 +122,18 @@
   /* field notes: real-world grounding */
   .fieldnote{
     font-size:14.5px;color:var(--ink);
-    background:#EBF3F1;border-left:3px solid var(--pass);
+    background:#F5EEE6;border-left:3px solid var(--teal);
     padding:10px 14px;border-radius:0 6px 6px 0;margin:18px 0;
   }
   .fieldnote .fn-tag{
     font-family:var(--mono);font-size:11px;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--pass);display:block;margin-bottom:4px;
+    text-transform:uppercase;color:var(--teal-dark);display:block;margin-bottom:4px;
   }
 
   /* margin perf-notes */
   .perfnote{
     font-family:var(--mono);font-size:11.5px;color:var(--muted);
-    background:#EDF1F3;border-left:3px solid var(--teal);
+    background:#F5EEE6;border-left:3px solid var(--teal);
     padding:8px 12px;border-radius:0 6px 6px 0;margin:18px 0;
   }
 
@@ -147,14 +157,14 @@
 
   /* code + tables */
   pre{
-    background:var(--panel);color:#D7E4EE;border-radius:8px;
+    background:var(--panel);color:#EFE4D8;border-radius:8px;
     padding:16px 18px;font-family:var(--mono);font-size:13px;
     line-height:1.6;overflow-x:auto;margin:16px 0;
   }
-  pre .c{color:#5E7A8F}
+  pre .c{color:#9C8B7A}
   pre .g{color:var(--panel-text)}
   code{
-    font-family:var(--mono);font-size:.88em;background:#E8EDF0;
+    font-family:var(--mono);font-size:.88em;background:#F0E9E0;
     padding:2px 5px;border-radius:4px;
   }
   table{
@@ -164,7 +174,7 @@
   th{
     text-align:left;font-family:var(--mono);font-size:11.5px;
     letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
-    padding:10px 14px;border-bottom:1px solid var(--line);background:#EFF3F5;
+    padding:10px 14px;border-bottom:1px solid var(--line);background:#F5EFE8;
   }
   td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
   tr:last-child td{border-bottom:none}
@@ -219,12 +229,12 @@
   <div class="topbar-inner">
     <span class="who">Fernanda Passos · Web Growth Engineer case study</span>
     <nav aria-label="Sections">
-      <a href="#assumptions">§1 assumptions</a>
-      <a href="#architecture">§2 architecture</a>
-      <a href="#performance">§3 performance</a>
-      <a href="#editing">§4 editing</a>
-      <a href="#gating">§5 lead gating</a>
-      <a href="#measure">§6 measurement</a>
+      <a href="#assumptions">1 · Assumptions</a>
+      <a href="#architecture">2 · Architecture</a>
+      <a href="#performance">3 · Performance</a>
+      <a href="#editing">4 · Editing</a>
+      <a href="#gating">5 · Lead gating</a>
+      <a href="#measure">6 · Measurement</a>
     </nav>
   </div>
 </div>
@@ -234,7 +244,7 @@
 <header class="hero">
   <p class="kicker">Case study · Prepared for Carrum Health</p>
   <h1>A Medical Insights Hub that stays fast at 5,000 resources</h1>
-  <p class="lede">My end-to-end technical approach to an enterprise-grade WordPress resource hub: content architecture, sub-second performance, marketer-safe editing, and lead gating that doesn't cost you Core Web Vitals. Grounded in years of running this exact stack (WordPress, Marketo, Salesforce) on cyberark.com.</p>
+  <p class="lede">My end-to-end technical approach to an enterprise-grade WordPress resource hub: content architecture, sub-second performance, marketer-safe editing, and lead gating that doesn't cost you Core Web Vitals. Grounded in years of building on this exact stack (WordPress, Marketo, Salesforce) at CyberArk.</p>
   <p class="byline"><strong>Fernanda Passos</strong> · fpassos.com · Voiceover: <a href="#">link to 7-min walkthrough</a></p>
 
   <div class="readout" aria-label="Live performance readout of this page">
@@ -251,13 +261,13 @@
 </header>
 <section id="assumptions">
   <div class="doc">
-    <p class="sec-label">§1</p>
+    <div class="sec-label"><span class="sec-num">1</span><span class="sec-name">Section 1 · Assumptions</span></div>
     <h2>Assumptions</h2>
     <p>Stated up front, as requested:</p>
     <ul class="plain">
       <li><strong>Scale:</strong> ~500 resources at launch, growing to 3,000–5,000 over two years. Three content formats: clinical case studies, research papers, webinars.</li>
       <li><strong>Traffic shape:</strong> overwhelmingly anonymous, read-heavy B2B traffic (benefits leaders, health-system stakeholders). Logged-in users are a handful of editors. This asymmetry drives the whole caching strategy.</li>
-      <li><strong>Stack:</strong> WordPress on a managed host with server-level page caching and Redis available, a CDN in front, <strong>Marketo</strong> for marketing automation and <strong>Salesforce</strong> as the CRM of record. This is the stack I've run in production at CyberArk. The architecture doesn't depend on any one vendor, but everything below is written against the tools I know at enterprise scale.</li>
+      <li><strong>Stack:</strong> WordPress on a managed host with server-level page caching and Redis available, a CDN in front, <strong>Marketo</strong> for marketing automation and <strong>Salesforce</strong> as the CRM of record. This is the stack I worked with at CyberArk: I owned the web side of the integration, partnering with demand generation and marketing ops, who own the platforms themselves. That division of responsibility is assumed throughout, because it's how enterprise teams actually run.</li>
       <li><strong>Team:</strong> one content manager who is not technical and should never need a developer to publish, plus a design system that must be impossible to break casually.</li>
       <li><strong>Compliance posture:</strong> healthcare-adjacent marketing content, not PHI. But I treat tracking and form data with HIPAA-adjacent caution anyway; it's the right instinct in this space.</li>
     </ul>
@@ -266,7 +276,7 @@
 
 <section id="architecture">
   <div class="doc">
-    <p class="sec-label">§2</p>
+    <div class="sec-label"><span class="sec-num">2</span><span class="sec-name">Section 2 · Content architecture</span></div>
     <h2>Content architecture: one post type, three taxonomies</h2>
     <p>The tempting move is three custom post types: <code>case_study</code>, <code>paper</code>, <code>webinar</code>. I'd argue against it. Format is a <em>facet</em> of a resource, not a different kind of thing: everything in this library shares a lifecycle, a card layout, a filtering UI, and a gating strategy.</p>
 
@@ -283,9 +293,9 @@
 
     <p>Why this matters for the brief's three goals:</p>
     <ul class="plain">
-      <li><strong>Performance:</strong> taxonomy queries hit indexed relationship tables. Every filtered view maps to a canonical taxonomy archive URL, which makes it cacheable (§3).</li>
+      <li><strong>Performance:</strong> taxonomy queries hit indexed relationship tables. Every filtered view maps to a canonical taxonomy archive URL, which makes it cacheable (Section 3).</li>
       <li><strong>Editor simplicity:</strong> one "Add resource" flow, not three. The content manager picks a type; the right fields appear.</li>
-      <li><strong>Lead capture:</strong> gating rules key off <code>resource_type</code> and a per-resource override, in one place.</li>
+      <li><strong>Lead capture:</strong> gating rules key off <code>resource_type</code> and a per-resource override, in one place (Section 5).</li>
     </ul>
 
     <div class="tradeoff">
@@ -303,7 +313,7 @@
 
 <section id="performance">
   <div class="doc">
-    <p class="sec-label">§3</p>
+    <div class="sec-label"><span class="sec-num">3</span><span class="sec-name">Section 3 · Performance</span></div>
     <h2>Sub-second at 5,000 posts</h2>
     <p>WordPress doesn't get slow because of post count. It gets slow because of unindexed <code>meta_query</code> filtering, uncached repeat work, and third-party scripts. So the performance plan is three rules and three layers.</p>
 
@@ -329,7 +339,7 @@
 </section>
 <section id="editing">
   <div class="doc">
-    <p class="sec-label">§4</p>
+    <div class="sec-label"><span class="sec-num">4</span><span class="sec-name">Section 4 · Editing</span></div>
     <h2>Editing: Gutenberg for freedom, tokens for the fence</h2>
     <p>"Gutenberg vs. ACF Blocks" is a false binary. The real question is <em>where the design system is enforced</em>. My answer: enforce it below the editor, in <code>theme.json</code> and a curated block library, so the content manager gets genuine freedom inside a fence they can't see and can't break.</p>
 
@@ -352,13 +362,15 @@
       ACF Blocks add a plugin dependency and a render layer that native blocks avoid, and heavy locking frustrates power users. I'll take both costs: for structured components, field-based editing is safer than free-form block manipulation, and an ACF Pro dependency is a mature, acceptable risk for the control it buys. The fence can be widened later; un-breaking a brand is harder.
     </div>
 
+    <div class="fieldnote"><span class="fn-tag">Field note: the number behind "accessible"</span>Owning the markup centrally is also how accessibility stops being a cleanup project. At CyberArk I led an accessibility remediation across the entire WordPress site, taking our Lighthouse accessibility score from 46 to 95, and the lasting fix wasn't the audit, it was moving to components where semantics, contrast, and focus states are built in once and inherited everywhere. For a healthcare audience this isn't polish; WCAG conformance is a contractual reality with hospital and health-plan partners. In this build, every ACF Block ships accessible by default, and the score is held at 95 or better in the same CI budget as performance. The two disciplines reinforce each other: the semantic markup, proper image handling, and lean DOM that accessibility demands are the same fundamentals fast pages are made of.</div>
+
     <p class="perfnote">// Success metric for this section: the content manager ships a new gated case study end-to-end with zero developer tickets, and it's pixel-identical to the design system.</p>
   </div>
 </section>
 
 <section id="gating">
   <div class="doc">
-    <p class="sec-label">§5</p>
+    <div class="sec-label"><span class="sec-num">5</span><span class="sec-name">Section 5 · Lead gating</span></div>
     <h2>Lead gating without the performance tax</h2>
     <p>Gating strategy is a funnel decision; gating <em>implementation</em> is a performance decision. Both matter here.</p>
 
@@ -372,7 +384,7 @@
     <p>Gate level is a per-resource field with sensible defaults by type: a marketing lever, not a code change. And it's an A/B testing surface: my hypothesis is soft gates win on net enterprise leads; I'd rather measure than argue.</p>
 
     <h3>The implementation: no script bloat, no layout shift</h3>
-    <p>I've spent years with Marketo's embed stack (<code>forms2.min.js</code> plus the Munchkin tracker) and out of the box it's a classic Core Web Vitals killer: render-blocking script weight and a form that pops into an unsized container, shoving the page down. Two rules fix it:</p>
+    <p>I've spent years implementing Marketo's embed stack on the web side (<code>forms2.min.js</code> plus the Munchkin tracker) and out of the box it's a classic Core Web Vitals killer: render-blocking script weight and a form that pops into an unsized container, shoving the page down. Two rules fix it:</p>
     <ul class="plain">
       <li><strong>Load nothing until intent.</strong> <code>forms2.min.js</code> loads only when the gate scrolls near the viewport (IntersectionObserver) or on click, then <code>MktoForms2.loadForm()</code> renders into the slot, never in the critical path. Munchkin loads deferred, after LCP; it's analytics, not content. The stricter variant: skip the embed entirely, ship a native styled form, and submit to Marketo server-side, with full markup control, zero third-party render cost.</li>
       <li><strong>Reserve the space.</strong> The gate container has an explicit <code>min-height</code> before the form exists, and Marketo's default form CSS is stripped (<code>above the fold</code> styles conflict anyway) in favor of the design system's own tokens. When the form arrives, nothing on the page moves. CLS contribution: zero.</li>
@@ -395,12 +407,12 @@
 
 <section id="measure">
   <div class="doc">
-    <p class="sec-label">§6</p>
+    <div class="sec-label"><span class="sec-num">6</span><span class="sec-name">Section 6 · Measurement</span></div>
     <h2>How I'd know it's working</h2>
     <ul class="plain">
-      <li><strong>Performance:</strong> CrUX field data (not just lab): p75 LCP &lt; 1.5 s, CLS &lt; 0.05, TTFB &lt; 200 ms, tracked per template. Lighthouse budget in CI blocks regressions before deploy.</li>
+      <li><strong>Performance:</strong> CrUX field data (not just lab): p75 LCP &lt; 1.5 s, CLS &lt; 0.05, TTFB &lt; 200 ms, tracked per template. Lighthouse budget in CI blocks regressions before deploy, and holds accessibility at 95+ per template alongside the performance numbers.</li>
       <li><strong>Growth:</strong> organic entrances to resource URLs, gate view → submission rate by gate type and therapeutic area, net-new enterprise domains captured, and lead → opportunity rate in Salesforce via Marketo campaign sync. That's the metric the growth team actually answers for.</li>
-      <li><strong>Operations:</strong> resources published per month without developer involvement, and time-to-publish. If the content manager needs me, §4 has failed.</li>
+      <li><strong>Operations:</strong> resources published per month without developer involvement, and time-to-publish. If the content manager needs me, Section 4 has failed.</li>
     </ul>
     <p>First experiment on day one of having traffic: soft vs. hard gate on the top ten case studies, judged on qualified leads, not raw submissions.</p>
   </div>
