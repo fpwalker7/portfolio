@@ -74,6 +74,9 @@
   .hero p.lede{font-size:19px;color:var(--muted);margin-bottom:10px}
   .hero .byline{font-size:14.5px;color:var(--muted)}
   .hero .byline strong{color:var(--ink)}
+  .voiceover{margin-top:14px}
+  .vo-label{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:6px}
+  audio{display:block;accent-color:var(--teal)}
 
   /* ---------- live perf readout (signature) ---------- */
   .readout{
@@ -245,7 +248,11 @@
   <p class="kicker">Case study · Prepared for Carrum Health</p>
   <h1>A Medical Insights Hub that stays fast at 5,000 resources</h1>
   <p class="lede">My end-to-end technical approach to an enterprise-grade WordPress resource hub: content architecture, sub-second performance, marketer-safe editing, and lead gating that doesn't cost you Core Web Vitals. Grounded in years of building on this exact stack (WordPress, Marketo, Salesforce) at CyberArk.</p>
-  <p class="byline"><strong>Fernanda Passos Walker</strong> · fpassos.com · Voiceover: <a href="/carrum/voiceover-carrum.m4a" target="_blank" rel="noopener noreferrer">link to 8-min walkthrough</a></p>
+  <p class="byline"><strong>Fernanda Passos Walker</strong> · fpassos.com</p>
+  <div class="voiceover">
+    <p class="vo-label">Walkthrough · 8:34 · press play and read along</p>
+    <audio controls src="/carrum/voiceover-carrum.m4a" style="width:100%;max-width:420px;margin-top:6px">Your browser does not support audio.</audio>
+  </div>
 
   <div class="readout" aria-label="Live performance readout of this page">
     <div class="rlabel">Live readout: this page, your device, right now</div>
@@ -429,7 +436,7 @@
 <footer>
   <div class="doc">
     <p><strong>Colophon &amp; AI disclosure.</strong> This page is itself the demo: one HTML file, no framework, no web fonts, no third-party requests, served from my own domain, the same discipline I'm proposing for the Hub. I used AI tools throughout. Claude helped me pressure test the architecture, challenge trade offs, and accelerate implementation of the page based on my design and specifications. I also used Claude and ChatGPT to help structure and refine the writing. The architecture, engineering decisions, and final implementation are mine, and I reviewed and validated everything included here.</p>
-    <p>Fernanda Passos Walker · fpassos.com · <a href="/carrum/voiceover-carrum.m4a" target="_blank" rel="noopener noreferrer">voiceover walkthrough (8:34)</a> · not indexed, prepared for the Carrum Health growth team.</p>
+    <p>Fernanda Passos Walker · fpassos.com · voiceover walkthrough (8:34) · not indexed, prepared for the Carrum Health growth team.</p>
   </div>
 </footer>
 
