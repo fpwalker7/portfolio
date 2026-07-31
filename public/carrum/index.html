@@ -293,7 +293,7 @@
 
     <p>Why this matters for the brief's three goals:</p>
     <ul class="plain">
-      <li><strong>Performance:</strong> taxonomy queries hit indexed relationship tables. Every filtered view maps to a canonical taxonomy archive URL, which makes it cacheable (Section 3).</li>
+      <li><strong>Performance:</strong> taxonomy queries hit the indexed <code>wp_term_relationships</code> table, while filtering on meta values means unindexed string comparisons against <code>wp_postmeta</code>: a full table scan at scale. Every filtered view maps to a canonical taxonomy archive URL, which makes it cacheable (Section 3).</li>
       <li><strong>Editor simplicity:</strong> one "Add resource" flow, not three. The content manager picks a type; the right fields appear.</li>
       <li><strong>Lead capture:</strong> gating rules key off <code>resource_type</code> and a per-resource override, in one place (Section 5).</li>
     </ul>
