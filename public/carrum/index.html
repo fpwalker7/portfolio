@@ -285,7 +285,7 @@
       <p>A single <code>resource</code> CPT with three registered taxonomies:</p>
       <ul class="plain">
         <li><code>resource_type</code>: case study / research paper / webinar</li>
-        <li><code>therapeutic_area</code>: oncology, cardiology, musculoskeletal…</li>
+        <li><code>medical_specialty</code>: oncology, cardiology, musculoskeletal…</li>
         <li><code>department</code>: the hospital-department segmentation</li>
       </ul>
       <p>Plus a small set of ACF fields per resource (gated asset file, webinar embed, citation metadata) shown conditionally by <code>resource_type</code>.</p>
@@ -411,7 +411,7 @@
     <h2>How I'd know it's working</h2>
     <ul class="plain">
       <li><strong>Performance:</strong> CrUX field data (not just lab): p75 LCP &lt; 1.5 s, CLS &lt; 0.05, TTFB &lt; 200 ms, tracked per template. Lighthouse budget in CI blocks regressions before deploy, and holds accessibility at 95+ per template alongside the performance numbers.</li>
-      <li><strong>Growth:</strong> organic entrances to resource URLs, gate view → submission rate by gate type and therapeutic area, net-new enterprise domains captured, and lead → opportunity rate in Salesforce via Marketo campaign sync. That's the metric the growth team actually answers for.</li>
+      <li><strong>Growth:</strong> organic entrances to resource URLs, gate view → submission rate by gate type and medical specialty, net-new enterprise domains captured, and lead → opportunity rate in Salesforce via Marketo campaign sync. That's the metric the growth team actually answers for.</li>
       <li><strong>Operations:</strong> resources published per month without developer involvement, and time-to-publish. If the content manager needs me, Section 4 has failed.</li>
     </ul>
     <p>First experiment on day one of having traffic: soft vs. hard gate on the top ten case studies, judged on qualified leads, not raw submissions.</p>
