@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import PdfViewer from '@/components/PdfViewer'
 
 export const metadata = {
   title: 'Accessibility Initiative | Fernanda Passos Walker',
@@ -23,11 +24,10 @@ export default function AccessibilityPage() {
         <h1 className="mb-6 text-2xl font-bold text-[hsl(var(--foreground))]">
           Accessibility Initiative
         </h1>
-        <iframe
+        <PdfViewer
           src="/resume/accessibility.pdf"
-          className="flex-1 w-full rounded-xl border border-[hsl(var(--border)/0.5)]"
-          style={{ minHeight: 'calc(100vh - 180px)' }}
-          title="Accessibility Initiative PDF"
+          pagesDir="accessibility-pages"
+          title="Accessibility Initiative"
         />
       </main>
     </div>

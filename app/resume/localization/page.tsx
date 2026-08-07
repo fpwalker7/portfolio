@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import PdfViewer from '@/components/PdfViewer'
 
 export const metadata = {
   title: 'Global Localization Initiative | Fernanda Passos Walker',
@@ -23,11 +24,10 @@ export default function LocalizationPage() {
         <h1 className="mb-6 text-2xl font-bold text-[hsl(var(--foreground))]">
           Global Localization Initiative
         </h1>
-        <iframe
+        <PdfViewer
           src="/resume/localization.pdf"
-          className="flex-1 w-full rounded-xl border border-[hsl(var(--border)/0.5)]"
-          style={{ minHeight: 'calc(100vh - 180px)' }}
-          title="Global Localization Initiative PDF"
+          pagesDir="localization-pages"
+          title="Global Localization Initiative"
         />
       </main>
     </div>

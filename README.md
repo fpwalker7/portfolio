@@ -71,6 +71,25 @@ Change the accent color by editing the `--accent` and `--primary` HSL values:
 
 ---
 
+## Resume PDFs (`/resume/accessibility`, `/resume/localization`)
+
+Mobile browsers have no inline PDF viewer — iOS Safari and Android Chrome both
+leave an `<iframe>` pointing at a PDF blank. So these pages show the native PDF
+viewer on desktop and pre-rendered page images on phones.
+
+**After replacing a PDF in `/public/resume/`, regenerate its page images:**
+
+```bash
+pip install pymupdf pillow
+python3 scripts/render-pdf-pages.py
+```
+
+That writes `/public/resume/<name>-pages/page-01.webp…` plus a `pages.json`
+manifest, which `components/PdfViewer.tsx` reads at build time. Commit the
+generated images along with the PDF.
+
+---
+
 ## AI Playbook Generator
 
 The generator calls the Anthropic API directly from the browser.
