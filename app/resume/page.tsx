@@ -6,28 +6,28 @@ import PrintButton from '@/components/PrintButton'
 
 const SKILL_CATEGORIES = [
   {
-    category: 'Web Development & Front-End',
-    skills: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'PHP', 'Responsive Design', 'SASS', 'APIs', 'JSON'],
+    category: 'Analytics & Growth Optimization',
+    skills: ['Google Analytics 4', 'Google Tag Manager', 'Hotjar', 'Conversion Rate Optimization', 'A/B Testing', 'Event Tracking', 'Web Form Optimization', 'Marketing Automation Integrations'],
+  },
+  {
+    category: 'SEO & Site Performance',
+    skills: ['Technical SEO', 'Generative Engine Optimization (GEO)', 'Answer Engine Optimization (AEO)', 'Google Search Console', 'Semrush', 'Screaming Frog', 'Structured Data', 'Page Speed Optimization', 'Asset Optimization'],
   },
   {
     category: 'CMS & Web Platform Architecture',
-    skills: ['Enterprise WordPress', 'Sitecore', 'Webflow', 'CMS Governance', 'Custom Templates', 'Reusable Components', 'Multilingual Workflows'],
-  },
-  {
-    category: 'Analytics & Growth Optimization',
-    skills: ['GA4', 'Conversion Rate Optimization', 'Event Tracking', 'A/B Testing', 'Form Optimization', 'MarTech Integrations'],
-  },
-  {
-    category: 'Performance, SEO & Accessibility',
-    skills: ['Page Speed Optimization', 'Technical SEO', 'WCAG Accessibility', 'Accessibility Remediation', 'Asset Optimization', 'Template Efficiency', 'Cross-Browser QA'],
+    skills: ['Enterprise WordPress', 'Sitecore', 'CMS Governance', 'Modular Component Systems', 'Multilingual Platforms', 'Localization Workflows', 'Global Content Architecture', 'WCAG Accessibility Standards'],
   },
   {
     category: 'Marketing & CRM Platforms',
-    skills: ['Marketo', 'HubSpot', 'Salesforce', 'API Integrations'],
+    skills: ['Marketo', 'Salesforce', 'Knak', 'API Integrations'],
+  },
+  {
+    category: 'Web Development & Front-End',
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'Responsive Design', 'SASS', 'REST APIs', 'JSON'],
   },
   {
     category: 'Collaboration & Workflow',
-    skills: ['Git', 'GitHub', 'npm', 'JIRA', 'Wrike', 'Agile Development', 'Cross Functional Collaboration', 'Figma', 'Vercel'],
+    skills: ['Backlog & Intake Management', 'Stakeholder Management', 'Vendor & Agency Management', 'JIRA', 'Wrike', 'Agile Development', 'Cross Functional Collaboration', 'Git', 'GitHub', 'Figma'],
   },
 ]
 
@@ -39,6 +39,23 @@ export const metadata = {
 
 const EXPERIENCE = [
   {
+    company: 'Independent Consultant',
+    href: 'https://www.fpassos.com/',
+    logo: null,
+    location: 'U.S. – Remote',
+    roles: [
+      {
+        title: 'Digital Experience Consultant',
+        period: 'March 2026 – Present',
+        bullets: [
+          'Advise on corporate website strategy and performance: information architecture and navigation, conversion paths, technical SEO, accessibility, and page speed, using GA4, Search Console, and Semrush to prioritize what to fix first.',
+          'Translate site performance data into recommendations and roadmaps for non-technical stakeholders, scoping work and defining success measures before anything gets built.',
+          'Track how AI search and answer engines surface content, testing structured data and question-led content structure alongside traditional SEO signals.',
+        ],
+      },
+    ],
+  },
+  {
     company: 'CyberArk',
     href: 'https://www.cyberark.com/',
     logo: '/logos/cyberark-icon.svg',
@@ -49,25 +66,24 @@ const EXPERIENCE = [
         period: 'January 2023 – March 2026',
         description: 'CyberArk (NASDAQ: CYBR) is a global cybersecurity leader specializing in identity security and privileged access management. Acquired by Palo Alto Networks for $25B in February 2026.',
         bullets: [
-          'Promoted to drive strategy and execution of the global web experience in partnership with growth and demand generation teams, optimizing journeys and conversion paths for multiple buyer audiences across the funnel.',
-          'Set CMS architecture and governance standards, building a scalable WordPress component library that reduced page build time, kept experiences consistent across regions, and enabled non-technical teams to self-serve content updates.',
-          'Defined and enforced accessibility standards across global web properties, leading hands-on remediation that raised the site-wide accessibility score to 96+ and embedding WCAG best practices into platform governance.',
-          'Owned multilingual platform architecture and localization strategy across 9 languages spanning North America, Europe, and APAC.',
-          'Built and optimized forms and key conversion paths across the site in partnership with demand operations, strengthening campaign tracking and attribution across Salesforce and marketing automation platforms.',
-          'Directed site performance and engagement improvements, setting standards for asset optimization, template efficiency, and front-end quality.',
-          'Led web execution and redirect strategy for acquisition integrations, including content consolidation, SEO preservation, CMS standardization, and localization.',
-          'Aligned landing page strategy with campaign intent alongside SEO, paid media, and content teams, improving engagement and conversion across inbound and paid traffic.',
-          'Contributed to future-state planning for a headless CMS architecture using React, Next.js, and TypeScript as part of the proposed modern web platform direction.',
+          'Promoted to own strategy and execution across all CyberArk web properties in partnership with growth and demand generation teams; managed intake and backlog prioritization of website requests across stakeholders, balancing impact and effort across concurrent workstreams.',
+          'Translated business and campaign goals into clear requirements and user stories for developers and designers, QA\'d completed work before launch, and defined success metrics to measure outcomes of shipped improvements.',
+          'Identified friction points in forms and key conversion paths using Hotjar session recordings, heatmaps, and funnel analytics; partnered with demand operations to implement fixes, strengthening UTM tracking and campaign attribution across Salesforce and marketing automation platforms.',
+          'Defined and enforced accessibility standards across global web properties, embedding WCAG best practices into enterprise WordPress platform governance.',
+          'Set CMS architecture and governance standards, building a scalable design system of web templates and reusable components that kept experiences consistent and accelerated campaign launches across regions.',
+          'Owned multilingual platform architecture and localization strategy across international markets, defining workflows and content standards and managing the European localization vendor (LanguageWire) across time zones against scope and delivery timelines.',
+          'Led web execution and redirect strategy for acquisition integrations, including content consolidation, SEO preservation, CMS standardization, and localization, protecting traffic and rankings through high-risk migrations.',
+          'Contributed to future-state planning for a WordPress-to-Contentful headless CMS migration, building React and Next.js knowledge to support a modern front-end stack.',
+          'Aligned landing page strategy with campaign intent alongside SEO, paid media, and content teams, designing and executing A/B tests to improve engagement and conversion across inbound and paid traffic.',
         ],
       },
       {
         title: 'Web Developer',
         period: 'March 2020 – December 2022',
         bullets: [
-          'Developed and optimized WordPress landing pages and campaign experiences for global acquisition initiatives using custom templates and front-end enhancements.',
-          'Managed multilingual content structures and localization workflows across international markets, supporting scalable global web governance.',
-          'Improved front-end performance, SEO, and attribution through asset optimization, template enhancements, and integrations with marketing automation and analytics platforms.',
-          <span><a href="/resume/accessibility" className="underline underline-offset-2 hover:text-[hsl(var(--accent))] transition-colors">Led hands-on accessibility remediation</a> across website pages and components, resolving critical WCAG issues and establishing a QA workflow to improve accessibility before launch.</span>,
+          'Developed and optimized WordPress landing pages and campaign experiences for global acquisition initiatives, improving performance through custom templates and front-end enhancements.',
+          'Managed multilingual content structures and localization workflows across international markets, establishing scalable global web governance.',
+          'Improved front-end performance, technical SEO, and attribution through asset optimization, template enhancements, and marketing automation and analytics integrations.',
         ],
       },
     ],
@@ -83,11 +99,9 @@ const EXPERIENCE = [
         period: 'May 2017 – October 2019',
         description: 'Global education company helping universities grow international enrollment through digital admissions, recruitment, and student success programs.',
         bullets: [
-          'Developed microsites, landing pages, and web applications supporting international marketing campaigns, student acquisition initiatives, and program launches.',
-          'Worked across Webflow, HubSpot, WordPress, Marketo, and Salesforce as Shorelight\'s marketing web stack evolved, supporting campaign pages, forms, CRM integrations, and lead flow.',
-          'Built scalable front end solutions using HTML5, CSS3, and JavaScript, translating business requirements into maintainable web implementations under tight timelines.',
-          'Implemented campaign experiences through Marketo and Salesforce integrations, connecting web experiences to Shorelight\'s broader marketing ecosystem.',
-          'Partnered with marketing, SEO, and product stakeholders to optimize WordPress based microsites, improving search visibility, usability, and overall user experience.',
+          'Developed microsites, landing pages, and web applications supporting international marketing campaigns and student acquisition initiatives.',
+          'Built scalable front end solutions using JavaScript, HTML5, and CSS3, translating business requirements into maintainable implementations under tight timelines.',
+          'Implemented campaign experiences in Marketo and Salesforce integrations while partnering with SEO teams to optimize WordPress pages and improve search visibility and user experience.',
         ],
       },
     ],
@@ -103,27 +117,10 @@ const EXPERIENCE = [
         period: 'June 2014 – May 2017',
         description: 'Leading healthcare technology company providing cloud based solutions for electronic health records, billing, patient engagement, and practice operations.',
         bullets: [
-          'Contributed to the athenahealth.com redesign and major brand refresh, supporting a 30% increase in annual site traffic, lead generation, and sales meetings.',
-          'Designed and implemented responsive Sitecore web experiences using HTML5, CSS3, JavaScript, and CMS templating to support product marketing and user engagement.',
-          'Collaborated with designers, marketers, and engineers to translate business and product requirements into scalable CMS driven web components.',
-          'Developed and maintained Sitecore components within structured GitHub workflows, including branching, pull requests, staging, and production releases.',
-          'Supported agile development cycles, CI/CD deployment workflows, automated testing, code quality, standards compliance, and cross browser compatibility.',
-        ],
-      },
-    ],
-  },
-  {
-    company: 'Cliir',
-    href: 'https://www.cliir.com/',
-    logo: '/logos/cliir-logo.png',
-    location: 'Boston, MA – Remote',
-    roles: [
-      {
-        title: 'Web Developer & Designer',
-        period: 'December 2013 – June 2014',
-        bullets: [
-          'Designed and implemented partner facing pages within Cliir\'s eCommerce platform, collaborating with management to align deliverables, timelines, and business needs.',
-          'Maintained and enhanced website content and functionality to ensure a consistent user experience and reliable site performance.',
+          'Delivered the athenahealth.com redesign and brand refresh driving a 30% increase in site traffic, lead generation, and sales meetings.',
+          'Developed and maintained Sitecore web experiences using GitHub version control and structured deployment workflows.',
+          'Built responsive user interfaces using HTML5, CSS3, JavaScript, and Sitecore templating ensuring cross-browser compatibility and code quality.',
+          'Delivered features and improvements through agile development cycles across staging and production environments.',
         ],
       },
     ],
@@ -271,12 +268,13 @@ export default function ResumePage() {
           <div className="rounded-xl border border-[hsl(var(--border)/0.5)] bg-[hsl(var(--card)/0.6)] p-6 shimmer-border-hover">
             <p className="text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">
               Web strategy and digital experience leader with 15+ years owning and optimizing enterprise
-              web ecosystems, including six years driving the global web experience at CyberArk in B2B
-              cybersecurity. Set the standards, architecture, and roadmap for governance, accessibility,
-              localization, and performance, and partner with demand generation, SEO, product, and brand
-              teams to improve buyer journeys for prospects, customers, partners, and developers. Translate
-              business goals into clear web strategy and requirements that deliver measurable gains in
-              engagement, conversion, and search visibility.
+              web ecosystems, including six years owning the full set of web properties at CyberArk in B2B
+              cybersecurity, from a nine-language flagship site to developer and open-source destinations.
+              Manage intake and backlog prioritization of website work across demand generation, SEO, product,
+              and brand stakeholders; use analytics, session recordings, heatmaps, and A/B testing to improve
+              buyer journeys and conversion for prospects, customers, partners, and developers. Set standards
+              for CMS governance, design systems, localization, accessibility, and performance, with measurable
+              gains in conversion and search visibility.
             </p>
           </div>
         </section>
