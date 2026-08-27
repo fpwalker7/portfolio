@@ -6,28 +6,28 @@ import PrintButton from '@/components/PrintButton'
 
 const SKILL_CATEGORIES = [
   {
+    category: 'Web Development & Front-End',
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'PHP', 'Responsive Design', 'SASS', 'REST APIs', 'JSON'],
+  },
+  {
+    category: 'CMS & Web Platform Architecture',
+    skills: ['Enterprise WordPress', 'Sitecore', 'Webflow', 'CMS Governance', 'Modular Component Systems', 'Custom Templates', 'Reusable Components', 'Multilingual Platforms', 'Localization Workflows', 'Global Content Architecture', 'WCAG Accessibility Standards'],
+  },
+  {
     category: 'Analytics & Growth Optimization',
     skills: ['Google Analytics 4', 'Google Tag Manager', 'Hotjar', 'Conversion Rate Optimization', 'A/B Testing', 'Event Tracking', 'Web Form Optimization', 'Marketing Automation Integrations'],
   },
   {
-    category: 'SEO & Site Performance',
-    skills: ['Technical SEO', 'Generative Engine Optimization (GEO)', 'Answer Engine Optimization (AEO)', 'Google Search Console', 'Semrush', 'Screaming Frog', 'Structured Data', 'Page Speed Optimization', 'Asset Optimization'],
-  },
-  {
-    category: 'CMS & Web Platform Architecture',
-    skills: ['Enterprise WordPress', 'Sitecore', 'CMS Governance', 'Modular Component Systems', 'Multilingual Platforms', 'Localization Workflows', 'Global Content Architecture', 'WCAG Accessibility Standards'],
+    category: 'Performance, SEO & Accessibility',
+    skills: ['Technical SEO', 'Generative Engine Optimization (GEO)', 'Answer Engine Optimization (AEO)', 'Google Search Console', 'Semrush', 'Screaming Frog', 'Structured Data', 'Page Speed Optimization', 'Asset Optimization', 'WCAG Accessibility', 'Accessibility Remediation', 'Template Efficiency', 'Cross-Browser QA'],
   },
   {
     category: 'Marketing & CRM Platforms',
-    skills: ['Marketo', 'Salesforce', 'Knak', 'API Integrations'],
-  },
-  {
-    category: 'Web Development & Front-End',
-    skills: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'Responsive Design', 'SASS', 'REST APIs', 'JSON'],
+    skills: ['Marketo', 'HubSpot', 'Salesforce', 'Knak', 'API Integrations'],
   },
   {
     category: 'Collaboration & Workflow',
-    skills: ['Backlog & Intake Management', 'Stakeholder Management', 'Vendor & Agency Management', 'JIRA', 'Wrike', 'Agile Development', 'Cross Functional Collaboration', 'Git', 'GitHub', 'Figma'],
+    skills: ['Backlog & Intake Management', 'Stakeholder Management', 'Vendor & Agency Management', 'Git', 'GitHub', 'npm', 'JIRA', 'Wrike', 'Agile Development', 'Cross Functional Collaboration', 'Figma', 'Vercel'],
   },
 ]
 
