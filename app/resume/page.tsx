@@ -126,6 +126,22 @@ const EXPERIENCE = [
     ],
   },
   {
+    company: 'Cliir',
+    href: 'https://www.cliir.com/',
+    logo: '/logos/cliir-logo.png',
+    location: 'Boston, MA – Remote',
+    roles: [
+      {
+        title: 'Web Developer & Designer',
+        period: 'December 2013 – June 2014',
+        bullets: [
+          'Designed and implemented partner facing pages within Cliir\'s eCommerce platform, collaborating with management to align deliverables, timelines, and business needs.',
+          'Maintained and enhanced website content and functionality to ensure a consistent user experience and reliable site performance.',
+        ],
+      },
+    ],
+  },
+  {
     company: 'Approach International Student Center',
     href: 'https://approachisc.edu/',
     logo: '/logos/approach-logo.png',
