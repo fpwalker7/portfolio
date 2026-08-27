@@ -3,6 +3,10 @@ import Link from 'next/link'
 import { ArrowLeft, Mail, Linkedin, MapPin, Award, Building2, GraduationCap, Code2, Heart, Languages, User } from 'lucide-react'
 import { SITE } from '@/lib/data'
 import PrintButton from '@/components/PrintButton'
+import type { ReactNode } from 'react'
+
+type Role = { title: string; period: string; description?: string; bullets: ReactNode[] }
+type Job = { company: string; href: string; logo: string | null; location: string; roles: Role[] }
 
 const SKILL_CATEGORIES = [
   {
@@ -37,7 +41,7 @@ export const metadata = {
     'Senior web developer with 15+ years of experience building, owning, and optimizing high performing websites for enterprise teams.',
 }
 
-const EXPERIENCE = [
+const EXPERIENCE: Job[] = [
   {
     company: 'Independent Consultant',
     href: 'https://www.fpassos.com/',
