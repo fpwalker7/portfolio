@@ -15,13 +15,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 // ─── EDIT THESE ──────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: 'Fernanda Passos Walker | Senior Web Developer',
-  description: 'Senior web developer with 15+ years building high-performing websites, scalable CMS systems, and marketing technology integrations for enterprise teams.',
-  keywords: ['web developer', 'senior web developer', 'enterprise WordPress', 'Next.js', 'CMS architecture', 'accessibility', 'technical SEO', 'Fernanda Passos Walker'],
+  title: 'Fernanda Passos Walker | Web Strategy & Digital Experience Leader',
+  description: 'Web strategy and digital experience leader with 15+ years owning enterprise web ecosystems — governance, architecture, accessibility, localization, and performance for enterprise teams.',
+  keywords: ['web strategy', 'digital experience', 'web strategy leader', 'enterprise WordPress', 'CMS governance', 'accessibility', 'technical SEO', 'localization', 'Fernanda Passos Walker'],
   authors: [{ name: 'Fernanda Passos Walker' }],
   openGraph: {
-    title: 'Fernanda Passos Walker — Senior Web Developer',
-    description: 'Senior web developer with 15+ years building high-performing websites, scalable CMS systems, and marketing technology integrations for enterprise teams.',
+    title: 'Fernanda Passos Walker — Web Strategy & Digital Experience Leader',
+    description: 'Web strategy and digital experience leader with 15+ years owning enterprise web ecosystems — governance, architecture, accessibility, localization, and performance for enterprise teams.',
     url: 'https://fpassos.com',
     siteName: 'Fernanda Passos Walker',
     images: [{ url: 'https://fpassos.com/images/social-share.png', alt: 'Fernanda Passos Walker' }],
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fernanda Passos Walker | Senior Web Developer',
-    description: 'Senior web developer with 15+ years building high-performing websites, scalable CMS systems, and marketing technology integrations for enterprise teams.',
+    title: 'Fernanda Passos Walker | Web Strategy & Digital Experience Leader',
+    description: 'Web strategy and digital experience leader with 15+ years owning enterprise web ecosystems — governance, architecture, accessibility, localization, and performance for enterprise teams.',
     images: ['https://fpassos.com/images/social-share.png'],
   },
 }

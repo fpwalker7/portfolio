@@ -4,7 +4,7 @@
 
 export const SITE = {
   name: 'Fernanda Passos Walker',
-  tagline: 'Modern web platforms for enterprise growth.\nCMS, code, and execution, led by a hands on developer.',
+  tagline: 'Web strategy and digital experience for enterprise growth.\nOwnership, governance, and execution across the full web lifecycle.',
   shortBio: 'Your role or title here',
   linkedin: 'https://www.linkedin.com/in/fernanda-passos-walker/',
   github: 'https://github.com/yourusername',
@@ -18,8 +18,8 @@ export const HERO = {
   headline: ['Leading', 'modern web experiences', 'for', 'enterprise growth'],
   headlineShimmer: 'modern',
   subtext:
-    "I'm a senior web developer and digital experience lead with 15+ years of experience building accessible, high performing websites, scalable CMS systems, and marketing technology integrations that help teams launch faster and grow smarter.",
-  roleLabel: 'React & Next.js | Enterprise WordPress | Reusable CMS Components | Accessibility | SEO | Marketing Tech',
+    'Web strategy and digital experience leader with 15+ years owning enterprise web ecosystems — setting governance, architecture, and roadmaps while partnering with demand generation, SEO, product, and brand teams to improve buyer journeys and drive measurable growth.',
+  roleLabel: 'Web Strategy | Digital Experience | CMS Governance | Accessibility | SEO | Localization | Marketing Technology',
   videoThumbnail: '/thumbnails/thumbnail.png', // replace with your image
   videoId: 'vbcfczd6v7', // Wistia or YouTube embed ID (leave blank to just show image)
   ctas: {
@@ -48,32 +48,32 @@ export const PARTNER_LOGOS: { name: string; src: string }[] = [
 
 // ─── About Section ───────────────────────────────────────────
 export const ABOUT = {
-  heading: 'The developer behind the',
+  heading: 'The strategist who owns the',
   headingShimmer: 'platform',
-  subheading: 'Modern code. Scalable CMS systems. Web experiences teams can actually use.',
+  subheading: 'Web strategy. Digital experience. Systems that let teams move faster.',
   video: '/videos/about.mp4', // 9:16 portrait video
   name: 'Fernanda Passos Walker',
   role: 'Your Role & Specialty',
   paragraphs: [
-    'I build websites that are more than pages. My work sits at the center of development, CMS architecture, accessibility, SEO, analytics, and marketing technology, so teams can launch faster without creating more complexity.',
-    'With 15+ years in web development, I have owned enterprise web platforms, built reusable CMS components, supported global websites, improved accessibility, and connected forms, tracking, and content workflows across marketing systems.',
-    'I am most useful when a website looks fine on the outside, but the system behind it needs to be faster, cleaner, easier to manage, and ready to scale.',
+    'I own the web layer end to end — strategy, architecture, governance, and execution. My work sits at the intersection of demand generation, SEO, accessibility, localization, and marketing technology, so teams have a platform that performs and a system they can actually use.',
+    'With 15+ years in enterprise web, I have owned global web platforms, set CMS governance standards, led accessibility remediations, managed multilingual localization across nine languages, and partnered with demand generation and marketing ops to improve conversion and attribution.',
+    'I am most valuable when the website looks fine on the outside but the strategy, governance, or system behind it needs to be cleaner, faster, and ready for what\'s next.',
   ],
   pillars: [
     {
       icon: 'Crosshair',
-      title: 'CMS Systems',
-      description: 'Build once. Reuse often.',
+      title: 'Web Strategy',
+      description: 'Governance, architecture, and roadmap.',
     },
     {
       icon: 'Layers',
-      title: 'Performance',
-      description: 'Fast. Accessible. Findable.',
+      title: 'Digital Experience',
+      description: 'Fast, accessible, and measurable.',
     },
     {
       icon: 'ShieldCheck',
-      title: 'Marketing Tech',
-      description: 'Forms. Tracking. Insights.',
+      title: 'Platform Ownership',
+      description: 'From intake to execution.',
     },
   ],
 }
@@ -219,7 +219,7 @@ export const WORK_ITEMS = [
     tag: 'Platform',
     tagline: '',
     description:
-      'Built and supported the CMS systems, reusable components, accessibility improvements, SEO foundations, and marketing integrations behind a global enterprise website.',
+      'Owned strategy and execution across CyberArk\'s global web properties — setting governance standards, driving accessibility, managing localization across nine languages, and partnering with demand generation and SEO to improve conversion across the full buyer journey.',
     icon: '/logos/cyberark-icon.svg',
     href: 'https://www.cyberark.com',
   },
@@ -229,7 +229,7 @@ export const WORK_ITEMS = [
     tag: 'Campaigns',
     tagline: '',
     description:
-      'Built microsites, landing pages, and web applications that connected Marketo, Salesforce, SEO, and front end development for international student recruitment.',
+      'Led web execution for international student acquisition campaigns — connecting Marketo, Salesforce, SEO, and front-end development across microsites, landing pages, and web applications.',
     icon: '/logos/shorelight-logo.png',
     href: 'https://www.shorelight.com',
   },
@@ -239,7 +239,7 @@ export const WORK_ITEMS = [
     tag: 'Digital Experience',
     tagline: '',
     description:
-      'Built responsive Sitecore experiences during a major website redesign and brand refresh, helping improve user engagement and support growth across traffic, leads, and sales meetings.',
+      'Led Sitecore web development through a major brand redesign that drove a 30% increase in site traffic, lead generation, and sales meetings.',
     icon: '/logos/athena-logo.png',
     href: 'https://www.athenahealth.com',
   },
@@ -412,10 +412,10 @@ export const FAQ_ITEMS = [
 
 // ─── Contact Section ──────────────────────────────────────────
 export const CONTACT = {
-  heading: "Let's build better",
-  headingShimmer: 'web systems',
+  heading: "Let's talk about your",
+  headingShimmer: 'web strategy',
   subtext:
-    'If you are modernizing your platform, adopting AI, or navigating change, I can help you move faster with fewer surprises.',
+    'If your web platform needs cleaner governance, stronger conversion, or a strategy that ties to growth — let\'s talk.',
   calLink: 'https://cal.com/yourname', // or Calendly link
   ctas: {
     primary: { label: 'Book a conversation', href: '#' },

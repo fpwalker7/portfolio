@@ -25,7 +25,7 @@ export default function HeroSection() {
 
           {/* Headline */}
           <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-[hsl(var(--foreground))] md:text-5xl lg:text-7xl">
-            Building <span className="shimmer-text">modern</span> web experiences for enterprise growth
+            Owning the web experience. <span className="shimmer-text">Driving</span> enterprise growth.
           </h1>
 
           {/* Subtext */}
