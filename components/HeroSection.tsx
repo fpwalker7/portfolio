@@ -46,14 +46,6 @@ export default function HeroSection() {
             >
               {HERO.ctas.primary.label}
             </Link>
-
-
-            <Link
-              href={HERO.ctas.tertiary.href}
-              className="text-sm text-[hsl(var(--muted-foreground))] underline underline-offset-4 transition-colors hover:text-[hsl(var(--foreground))]"
-            >
-              {HERO.ctas.tertiary.label}
-            </Link>
           </div>
         </div>
 

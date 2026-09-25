@@ -45,9 +45,6 @@ export default function Footer() {
               <Link href="/#work" className="text-sm text-[hsl(var(--muted-foreground))] transition-colors hover:text-[hsl(var(--foreground))]">
                 Work
               </Link>
-              <Link href="/resume" className="text-sm text-[hsl(var(--muted-foreground))] transition-colors hover:text-[hsl(var(--foreground))]">
-                Resume
-              </Link>
             </div>
             <p className="mt-4 text-xs text-[hsl(var(--muted-foreground))]">
               © {year} {SITE.name}.

@@ -25,7 +25,6 @@ export const HERO = {
   ctas: {
     primary: { label: 'View Work', href: '/#work' },
     secondary: { label: 'Book a conversation', href: '/#contact' },
-    tertiary: { label: 'Latest Resume', href: '/resume' },
   },
 }
 
