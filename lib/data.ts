@@ -218,7 +218,7 @@ export const PLAYBOOK_SCENARIOS = [
 export const WORK_ITEMS = [
   {
     slug: 'project-one',
-    company: 'CyberArk — Enterprise web platform ownership',
+    company: 'CyberArk, now part of Palo Alto Networks — Enterprise web platform ownership',
     tag: 'Platform',
     tagline: '',
     description:

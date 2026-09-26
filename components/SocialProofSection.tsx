@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Quote } from 'lucide-react'
 import { TESTIMONIALS } from '@/lib/data'
 
-const SPEED = 0.9
+const SPEED = 1.5
 const CARD_WIDTH = 405 // 380px card + 20px gap + 5px buffer
 
 export default function SocialProofSection() {
