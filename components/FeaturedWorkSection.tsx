@@ -50,7 +50,7 @@ export default function FeaturedWorkSection() {
                     {item.tagline}
                   </span>
                 </h3>
-                <p className="max-w-xl text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">
+                <p className="text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">
                   {item.description}
                 </p>
               </div>
