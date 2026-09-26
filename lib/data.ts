@@ -334,6 +334,7 @@ export const TESTIMONIALS: { quote: string; name: string; role: string; avatar?:
       "I knew Fernanda was a star when I joined CyberArk and we had our first 1x1 regarding the website path and track. During the two years she worked in my organization, she maintained a fantastic attitude and strategically executed a # of projects from start to finish.",
     name: "Eric Mullins",
     role: "VP, Demand, Brand & Digital Marketing",
+    avatar: "/images/testimonials/eric-mullins.jpeg",
   },
   {
     quote:
@@ -347,6 +348,7 @@ export const TESTIMONIALS: { quote: string; name: string; role: string; avatar?:
       "Fernanda is a team-oriented hard worker who is always willing to step outside the bounds of her job description to assist. … Fernanda truly seized the opportunity that transition presented to leverage her teaching abilities, training both technical and non-technical colleagues on how to use the Sitecore CMS.",
     name: "Stephanie Saia, PMP",
     role: "Web Strategy & Digital Product Management",
+    avatar: "/images/testimonials/stephanie-saia.jpeg",
   },
   {
     quote:
@@ -360,12 +362,14 @@ export const TESTIMONIALS: { quote: string; name: string; role: string; avatar?:
       "Fernanda's ability to juggle multiple web projects was unlike any I have seen before and made a dramatic difference in the productivity level of our Marketing Operations team. Even under the tightest deadlines, Fernanda always met them and did it with a smile.",
     name: "Christina Ciampa",
     role: "Owner/Founder of All She Wrote Books",
+    avatar: "/images/testimonials/christina-ciampa.jpeg",
   },
   {
     quote:
       "…she has been an incredible teammate and teacher. Fernanda took tremendous care in ensuring I got up to speed when I joined the team. She was patient in training me on our CMS and internal processes.",
     name: "Rachel Park-Fleming",
     role: "Project Management | Strategy and Operations",
+    avatar: "/images/testimonials/rachel-park-fleming.jpeg",
   },
   {
     quote:
