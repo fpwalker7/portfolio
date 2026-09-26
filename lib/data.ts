@@ -18,8 +18,8 @@ export const HERO = {
   headline: ['Leading', 'modern web experiences', 'for', 'enterprise growth'],
   headlineShimmer: 'modern',
   subtext:
-    'Web strategy and digital experience leader with 15+ years owning enterprise web ecosystems — setting governance, architecture, and roadmaps while partnering with demand generation, SEO, product, and brand teams to improve buyer journeys and drive measurable growth.',
-  roleLabel: 'Web Strategy | Digital Experience | CMS Governance | Accessibility | SEO | Localization | Marketing Technology',
+    'Web strategy and digital experience leader with 15+ years owning enterprise web ecosystems — setting governance, architecture, and roadmaps, and leading conversion optimization and experimentation with demand generation, SEO, product, and brand teams to improve buyer journeys and drive measurable growth.',
+  roleLabel: 'Web Strategy | Digital Experience | Growth & Experimentation | CMS Governance | Accessibility | SEO | Localization | Marketing Technology',
   videoThumbnail: '/thumbnails/thumbnail.png', // replace with your image
   videoId: 'vbcfczd6v7', // Wistia or YouTube embed ID (leave blank to just show image)
   ctas: {
@@ -54,8 +54,9 @@ export const ABOUT = {
   name: 'Fernanda Passos Walker',
   role: 'Your Role & Specialty',
   paragraphs: [
-    'I own the web layer end to end — strategy, architecture, governance, and execution. My work sits at the intersection of demand generation, SEO, accessibility, localization, and marketing technology, so teams have a platform that performs and a system they can actually use.',
-    'With 15+ years in enterprise web, I have owned global web platforms, set CMS governance standards, led accessibility remediations, managed multilingual localization across nine languages, and partnered with demand generation and marketing ops to improve conversion and attribution.',
+    'I own the web layer end to end — strategy, architecture, governance, experimentation, and execution. My work sits at the intersection of demand generation, SEO, accessibility, localization, and marketing technology, so teams have a platform that performs and a system they can actually use.',
+    'With 15+ years in enterprise web, I spent my last three years at CyberArk owning every web property across nine languages, including a homepage with 337,000+ visits and localized homepages drawing 67,000+ more. I led the web team in India, trained a UX designer who joined the team, managed our European localization vendor, turned a legal accessibility flag into a sitewide program that took Lighthouse accessibility from 46 to 95, and ran the A/B tests behind a Request Demo page that converted about 19% of its visitors.',
+    'Today I work as an independent digital experience consultant, advising teams on information architecture, navigation, conversion paths, technical SEO, and accessibility, and testing how AI search engines surface and cite their content.',
     'I am most valuable when the website looks fine on the outside but the strategy, governance, or system behind it needs to be cleaner, faster, and ready for what\'s next.',
   ],
   pillars: [
@@ -80,24 +81,24 @@ export const ABOUT = {
 // ─── Impact Stats ─────────────────────────────────────────────
 export const STATS = [
   {
-    value: '15+',
-    label: 'Years in Web Development',
-    description: 'Building websites, CMS systems, and digital experiences across enterprise teams.',
-  },
-  {
-    value: '9+',
+    value: '12+',
     label: 'Years in Enterprise Web',
     description: 'CyberArk, Shorelight, and athenahealth experience across CMS, campaigns, accessibility, SEO, and web operations.',
   },
   {
-    value: '9',
-    label: 'Languages Supported',
-    description: 'Managing global web localization workflows across multilingual enterprise websites.',
+    value: '19%',
+    label: 'Request Demo Submit Rate',
+    description: '1,200+ form submissions on CyberArk\'s Request Demo page, driven by A/B tests on calls to action, layouts, and forms.',
   },
   {
-    value: '96',
-    label: 'Accessibility Score Improved',
-    description: 'Helping raise accessibility quality through reusable templates, audits, and design system improvements.',
+    value: '9',
+    label: 'Languages Owned',
+    description: 'Owned the website experience across nine languages, with localized homepages drawing 67,000+ visits.',
+  },
+  {
+    value: '95',
+    label: 'Lighthouse Accessibility, up from 46',
+    description: 'Turned a legal accessibility flag into a sitewide program across Brand, Creative, and UX.',
   },
 ]
 
@@ -110,6 +111,9 @@ export const SKILLS_TAGS = [
   'Performance',
   'Marketo & Salesforce',
   'GA4 & GTM',
+  'Adobe Analytics',
+  'Hotjar',
+  'A/B Testing & CRO',
   'Localization',
   'Web Governance',
   'Digital Experience',
@@ -218,7 +222,7 @@ export const WORK_ITEMS = [
     tag: 'Platform',
     tagline: '',
     description:
-      'Owned strategy and execution across CyberArk\'s global web properties — setting governance standards, driving accessibility, managing localization across nine languages, and partnering with demand generation and SEO to improve conversion across the full buyer journey.',
+      'Owned every CyberArk web property across nine languages, including a homepage with 337,000+ visits — setting governance standards, leading the web team in India, raising Lighthouse accessibility from 46 to 95, and running A/B tests with demand generation and SEO that brought the Request Demo page 1,200+ submissions at a ~19% submit rate.',
     icon: '/logos/cyberark-icon.svg',
     href: 'https://www.cyberark.com',
   },
@@ -310,48 +314,65 @@ export const WRITING_SECTION = {
 }
 
 // ─── Testimonials ─────────────────────────────────────────────
-export const TESTIMONIALS = [
+export const TESTIMONIALS: { quote: string; name: string; role: string; avatar?: string }[] = [
   {
     quote:
-      "Fernanda exemplifies everything you want in a coworker. She's driven, dedicated, talented, flexible, a true team player and just a real joy to be around. During our time working together on athenahealth.com, she showed tenacity and patience, and really kept her cool under a tremendous amount of pressure. I always felt reassured knowing Fernanda was on the job because, despite all the challenges of the project, I knew she'd deliver the best results and she'd do so on time, with a smile.",
-    name: 'Jake Sargent',
-    role: 'Staff Content Designer, Netflix',
-    avatar: '/images/testimonials/jake-sargent.jpeg',
+      "Fernanda truly owned processes end-to-end bringing structure, clarity, and consistency that made a real difference for our team's effectiveness. She was also a standout collaborator, seamlessly partnering across our Center of Excellence, Localization, Legal, UI/UX, Design and Demand Generation to ensure alignment and amplify results.",
+    name: "Jim Sabbia",
+    role: "Director, Web Strategy and Development at Barracuda",
+    avatar: "/images/testimonials/jim-sabbia.jpeg",
   },
   {
     quote:
-      "Fernanda is a killer web developer who can seamlessly take UX/Design specs and translate them into web experiences. Fernanda not only heavily contributed to our ongoing front-end web experience (and a major redesign effort), but she also fully took on our global localization process. This was a new area for her to learn and she absolutely killed it. Plus, she did it with the grace and positivity you come to expect when working with her.",
-    name: 'Sean Galliher',
-    role: 'VP of Marketing at Second Front Systems',
-    avatar: '/images/testimonials/sean-galliher.jpeg',
+      "What impressed me most about Fernanda was her resourcefulness and solution-oriented mindset. She never treated a challenge as a dead end. Instead, she'd dig in and come back with answers. Fernanda was someone the team could genuinely count on when it mattered.",
+    name: "Anna Walsh",
+    role: "VP Marketing",
+    avatar: "/images/testimonials/anna-walsh.jpeg",
   },
   {
     quote:
-      'Fernanda brings a strong combination of technical talent, hard work, and genuine kindness to her role as a Senior Web Developer. I always had complete confidence working with her, knowing the project would go smoothly and exceed expectations. She is a highly skilled developer and a fantastic teammate.',
-    name: 'David Lawler',
-    role: 'Director, Creative at Palo Alto Networks',
-    avatar: '/images/testimonials/david-lawler.jpeg',
+      "I knew Fernanda was a star when I joined CyberArk and we had our first 1x1 regarding the website path and track. During the two years she worked in my organization, she maintained a fantastic attitude and strategically executed a # of projects from start to finish.",
+    name: "Eric Mullins",
+    role: "VP, Demand, Brand & Digital Marketing",
   },
   {
     quote:
-      'Beyond her development expertise, Fernanda truly owns processes end-to-end bringing structure, clarity, and consistency that makes a real difference for our team\'s effectiveness. She is also a standout collaborator, seamlessly partnering across our Center of Excellence, Localization, Legal, UI/UX, Design and Demand Generation to ensure alignment and amplify results.',
-    name: 'Jim Sabbia',
-    role: 'Director, Web Strategy and Development at Barracuda',
-    avatar: '/images/testimonials/jim-sabbia.jpeg',
+      "Always the first to raise her hand, she is the definition of a true team player. … she also fully took on our global localization process. This was a new area for her to learn and she absolutely killed it.",
+    name: "Sean Galliher",
+    role: "VP of Marketing at Second Front Systems",
+    avatar: "/images/testimonials/sean-galliher.jpeg",
   },
   {
     quote:
-      "Fernanda's work was visually polished, well-structured, and always delivered on time. What stood out most was Fernanda's combination of creative skill and professional reliability. She took ownership of every project, came with solutions rather than problems, and communicated clearly throughout. You always knew where things stood and that the final result would be something to be proud of.",
-    name: 'Carlos Condado',
-    role: 'Sr. Product Marketing Manager for Red Hat AI',
-    avatar: '/images/testimonials/carlos-condado.jpeg',
+      "Fernanda is a team-oriented hard worker who is always willing to step outside the bounds of her job description to assist. … Fernanda truly seized the opportunity that transition presented to leverage her teaching abilities, training both technical and non-technical colleagues on how to use the Sitecore CMS.",
+    name: "Stephanie Saia, PMP",
+    role: "Web Strategy & Digital Product Management",
   },
   {
     quote:
-      "Fernanda was someone the team could genuinely count on when it mattered. She had a quiet dedication that spoke volumes. When deadlines were tight, she often worked late into the evening to see a project through completion. She's a talented developer and an even better colleague. Any organization would be lucky to have Fernanda on their web team. She brings both technical depth and the drive to make it happen, as well as being a kind, caring human being.",
-    name: 'Anna Walsh',
-    role: 'VP Marketing',
-    avatar: '/images/testimonials/anna-walsh.jpeg',
+      "What stood out most was her combination of creative skill and professional reliability. She took ownership of every project, came with solutions rather than problems, and communicated clearly throughout. You always knew where things stood and that the final result would be something to be proud of.",
+    name: "Carlos Condado",
+    role: "Sr. Product Marketing Manager for Red Hat AI",
+    avatar: "/images/testimonials/carlos-condado.jpeg",
+  },
+  {
+    quote:
+      "Fernanda's ability to juggle multiple web projects was unlike any I have seen before and made a dramatic difference in the productivity level of our Marketing Operations team. Even under the tightest deadlines, Fernanda always met them and did it with a smile.",
+    name: "Christina Ciampa",
+    role: "Owner/Founder of All She Wrote Books",
+  },
+  {
+    quote:
+      "…she has been an incredible teammate and teacher. Fernanda took tremendous care in ensuring I got up to speed when I joined the team. She was patient in training me on our CMS and internal processes.",
+    name: "Rachel Park-Fleming",
+    role: "Project Management | Strategy and Operations",
+  },
+  {
+    quote:
+      "Fernanda exemplifies everything you want in a coworker. She's driven, dedicated, talented, flexible, a true team player and just a real joy to be around. During our time working together on athenahealth.com, she showed tenacity and patience, and really kept her cool under a tremendous amount of pressure.",
+    name: "Jake Sargent",
+    role: "Staff Content Designer, Netflix",
+    avatar: "/images/testimonials/jake-sargent.jpeg",
   },
 ]
 

@@ -82,13 +82,19 @@ export default function SocialProofSection() {
               </blockquote>
 
               <div className="mt-4 flex items-center gap-3">
-                <div className="relative h-7 w-7 overflow-hidden rounded-full bg-[hsl(var(--secondary))]">
-                  <Image
-                    src={t.avatar}
-                    alt={t.name}
-                    fill
-                    className="rounded-full object-cover"
-                  />
+                <div className="relative flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-[hsl(var(--secondary))]">
+                  {t.avatar ? (
+                    <Image
+                      src={t.avatar}
+                      alt={t.name}
+                      fill
+                      className="rounded-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-[10px] font-medium text-[hsl(var(--muted-foreground))]" aria-hidden="true">
+                      {t.name.split(' ').slice(0, 2).map((w) => w[0]).join('')}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <p className="text-xs font-medium text-[hsl(var(--foreground))]">{t.name}</p>
